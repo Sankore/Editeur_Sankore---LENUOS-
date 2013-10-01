@@ -1,0 +1,61 @@
+html {font-size: 18px;}
+
+@sprite body{
+		gwt-image:'body';width:auto; height:auto; background-color:#e6e3dc;overflow: auto;margin:0;padding:0;
+		font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; font-style:normal;font-weight:normal;font-size:0.65em;color:textColor;
+}
+
+@if user.agent ie7 ie8 {
+    input[type="submit"]:focus, input[type="button"]:focus, button:focus
+	{     
+	    outline : none; 
+	    outline: 0;
+	}
+}
+
+@if user.agent gecko1_8 {
+    input[type="submit"]:\:-moz-focus-inner, input[type="button"]:\:-moz-focus-inner, button:\:-moz-focus-inner
+    {   
+        border : 0;
+        padding: 0;
+    }
+}
+
+a, input:focus, textarea:focus, button:focus, div:focus {
+	outline : 0 none; 
+}
+
+.padre{width:appWidth;margin:0 auto;}
+.padre > div {margin-bottom: 50px;}
+.header{width:appWidth;height:headerHeight;}
+@sprite .headerMenu{width:appWidth;height:headerHeight;gwt-image: 'header';}
+.headerOne{width:357px;height:headerHeight;float:left;}
+.loading{margin-left:35px;}
+.logo{margin:5px 0px 0px 10px; height: 22px;}
+.login{margin-left: 10px; color:#FFF;text-shadow: black 0px 1px 1px;white-space:nowrap;font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;}
+.headerTwo{width:590px;height:41px;float:left;padding-top:15px;}
+
+.menuAnimationConstraint{height:menuHeight; overflow: hidden;}
+.navigOne{width:auto;height:menuContentHeight;position:relative;list-style:none;margin:0;padding: 0;}
+.navigOne li{width:auto;height:menuContentHeight;float:left;display:block;position:relative;margin-right:18px;cursor:pointer;}
+.navigOne li button{border:none;background:none;width:auto;width:120px!important;height:menuContentHeight; cursor:pointer;font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;}
+.navigOne li button span{color:textColor;}
+.navigOne li img, .navigOne li span{float:left;}
+
+.advice{width:545px;line-height:menuContentHeight;}
+.notification{background-color:white;}
+.notification .info{}
+.notification .warning{color: orange;}
+.notification .error{color: red;}
+@sprite .disconnect {gwt-image:'disconnect';margin-top: 17px;border:0;cursor: pointer;}
+.disconnect[disabled] {cursor:auto;opacity:0.5;}
+
+.content{width:appWidth;margin:0 auto;}
+
+.logger{max-height:200px;overflow: auto;}
+
+.disabled {
+	color: #999;
+	background-position: 0 -25px !important;
+	cursor: auto !important;	
+}

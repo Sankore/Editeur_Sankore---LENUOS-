@@ -1,0 +1,28 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:c="urn:import:com.paraschool.editor.modules.commons.client.ui">
+	
+	<ui:style field="css" type="com.paraschool.editor.modules.etudier.client.ui.EtudierNodeContent.CssResource">
+		@external part, resource, sound-text, sound, text, has-sound, has-text;
+		
+		.part{}
+		.resource{}
+		.sound-text{}
+		.sound{}
+		.text{}
+		.sound-text.has-sound.has-text .sound{}
+		.sound-text.has-sound.has-text .text{}
+		
+	</ui:style>
+	<g:FlowPanel ui:field="root" styleName="{css.part}">
+		<c:MediaContainer ui:field="resource" styleName="{css.resource}"></c:MediaContainer>
+		<g:HTMLPanel ui:field="soundTextContainer" styleName="{css.sound-text}">
+			<c:MediaContainer ui:field="sound" styleName="{css.sound}"></c:MediaContainer>
+			<g:HTMLPanel styleName="{css.text}">
+				<g:HTML ui:field="text"></g:HTML>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:FlowPanel>
+	
+</ui:UiBinder> 

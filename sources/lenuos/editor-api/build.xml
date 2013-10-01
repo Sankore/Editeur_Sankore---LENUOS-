@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="EditorApi" default="build" basedir=".">
+
+	<property environment="env"/>
+	<property file="${basedir}/build.properties" />
+	
+	<property name="version.num" value="1.00" />
+	<buildnumber file="${basedir}/build.num" />
+	
+	<tstamp>
+		<format property="TODAY" pattern="yyyy-MM-dd HH:mm:ss" />
+	</tstamp>
+
+	<!-- Configure path to GWT SDK -->
+	<property name="libs" location="${libs}" />
+
+	
+	
+	<!-- Configure class path for compilation -->
+	<path id="project.classpath">
+		<fileset dir="${libs}" includes="**"></fileset>
+		<pathelement location="${basedir}/classes" />
+	</path>
+
+	<!-- Api java compilation (used in rebind)-->
+	<target name="compile" depends="clean" description="Compile api java source">
+		<mkdir dir="${basedir}/classes" />
+		<javac srcdir="${basedir}/src" includes="**" encoding="utf-8" destdir="${basedir}/classes" source="1.5" target="1.5" nowarn="true" debug="true" debuglevel="lines,vars,source">
+			<classpath refid="project.classpath" />
+		</javac>
+		<copy todir="${basedir}/classes">
+			<fileset dir="${basedir}/src" />
+		</copy>
+	</target>
+
+	<!-- build application -->
+	<target name="build" depends="compile" description="Create a jar file">
+		<mkdir dir="${project.bin}" />
+		<manifest file="${basedir}/MANIFEST.MF">
+			<attribute name="Built-By" value="${user.name}" />
+			<attribute name="Implementation-Version" value="${version.num}-b${build.number}" />
+			<attribute name="Built-Date" value="${TODAY}" />
+		</manifest>
+		<jar destfile="${project.bin}/${project.product}" basedir="${basedir}/classes" manifest="${basedir}/MANIFEST.MF"/>
+		<delete file="${basedir}/MANIFEST.MF" failonerror="false"/>
+	</target>
+
+	<!-- build cleanup -->
+	<target name="clean" description="Cleans this project">
+		<delete file="${project.bin}/${project.product}" failonerror="false" />
+		<delete dir="${basedir}/classes" failonerror="false" />
+	</target>
+
+</project>

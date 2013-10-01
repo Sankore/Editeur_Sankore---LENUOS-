@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample>
+	<details>
+		<id>categorize_1</id>
+		<module>categorize</module>
+		<name>Légender des sons</name>
+		<description></description>
+		<thumbnail>thumbnail.png</thumbnail>
+		<locale>fr</locale>		
+	</details>
+	<package>categorize_1_fr.zip</package>
+	<content>{&quot;statement&quot;:{&quot;statement&quot;:&quot;&lt;h3&gt;Placez chaque mot en dessous de haut-parleur correspondant.&lt;/h3&gt;&quot;, &quot;thumbnail&quot;:null, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;options&quot;:[{&quot;name&quot;:&quot;hide&quot;, &quot;value&quot;:&quot;hide&quot;},{&quot;name&quot;:&quot;switchStatement&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;sequence&quot;, &quot;value&quot;:null}], &quot;nodes&quot;:[{&quot;content&quot;:{&quot;statement&quot;:{&quot;statement&quot;:&quot;&quot;, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;blocs&quot;:[{&quot;sound&quot;:&quot;PSEditor-5902414527857176697.mp3&quot;, &quot;text&quot;:&quot;&quot;},{&quot;sound&quot;:&quot;PSEditor-6890013904373269244.mp3&quot;, &quot;text&quot;:&quot;&quot;},{&quot;sound&quot;:&quot;PSEditor-8361098800771610985.mp3&quot;, &quot;text&quot;:&quot;&quot;},{&quot;sound&quot;:&quot;PSEditor-1330719534894911571.mp3&quot;, &quot;text&quot;:&quot;&quot;}], &quot;cells&quot;:[{&quot;text&quot;:&quot;&lt;h1&gt;guitare&lt;/h1&gt;&quot;},{&quot;text&quot;:&quot;&lt;h1&gt;saxophone&lt;/h1&gt;&quot;},{&quot;text&quot;:&quot;&lt;h1&gt;clarinette&lt;/h1&gt;&quot;},{&quot;text&quot;:&quot;&lt;h1&gt;trompette&lt;/h1&gt;&quot;}]}, &quot;options&quot;:[{&quot;name&quot;:&quot;random&quot;, &quot;value&quot;:&quot;random&quot;},{&quot;name&quot;:&quot;cellSequence&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;resourceAlignement&quot;, &quot;value&quot;:&quot;BOTTOM&quot;}]}]}</content>
+	<resources>
+	    <entry>
+	      <string>PSEditor-5902414527857176697.mp3</string>
+	      <audio id="PSEditor-5902414527857176697.mp3" url="resources/PSEditor-5902414527857176697.mp3" mimetype="audio/mpeg" size="19704" locale="">
+	        <name>clarinette.mp3</name>
+	        <info duration="-9223372036854" codec="CODEC_ID_MP3" format="FMT_S16"/>
+	      </audio>
+	    </entry>
+	    <entry>
+	      <string>PSEditor-1330719534894911571.mp3</string>
+	      <audio id="PSEditor-1330719534894911571.mp3" url="resources/PSEditor-1330719534894911571.mp3" mimetype="audio/mpeg" size="15942" locale="">
+	        <name>trompette.mp3</name>
+	        <info duration="-9223372036854" codec="CODEC_ID_MP3" format="FMT_S16"/>
+	      </audio>
+	    </entry>
+	    <entry>
+	      <string>PSEditor-6890013904373269244.mp3</string>
+	      <audio id="PSEditor-6890013904373269244.mp3" url="resources/PSEditor-6890013904373269244.mp3" mimetype="audio/mpeg" size="18032" locale="">
+	        <name>guitarre.mp3</name>
+	        <info duration="-9223372036854" codec="CODEC_ID_MP3" format="FMT_S16"/>
+	      </audio>
+	    </entry>
+	    <entry>
+	      <string>PSEditor-8361098800771610985.mp3</string>
+	      <audio id="PSEditor-8361098800771610985.mp3" url="resources/PSEditor-8361098800771610985.mp3" mimetype="audio/mpeg" size="20957" locale="">
+	        <name>saxophone.mp3</name>
+	        <info duration="-9223372036854" codec="CODEC_ID_MP3" format="FMT_S16"/>
+	      </audio>
+	    </entry>
+	  </resources>
+</sample>

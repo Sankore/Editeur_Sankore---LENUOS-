@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample>
+	<details>
+		<id>quizz_1</id>
+		<module>quizz</module>
+		<name>Choisir une réponse</name>
+		<description></description>
+		<thumbnail>thumbnail.png</thumbnail>
+		<locale>fr</locale>		
+	</details>
+	<package>quizz_1_fr.zip</package>
+	<content>{&quot;statement&quot;:{&quot;statement&quot;:&quot;&lt;h3&gt;Choisissez la réponse à cette question.&lt;/h3&gt;&quot;, &quot;thumbnail&quot;:null, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;options&quot;:[{&quot;name&quot;:&quot;hide&quot;, &quot;value&quot;:&quot;hide&quot;},{&quot;name&quot;:&quot;switchStatement&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;sequence&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;switchNode&quot;, &quot;value&quot;:null}], &quot;nodes&quot;:[{&quot;content&quot;:{&quot;statement&quot;:&quot;&lt;p&gt;Combien y-a-t-il d&apos;habitants sur Terre ?&lt;/p&gt;&quot;, &quot;cells&quot;:[{&quot;content&quot;:&quot;&lt;p&gt;6,9 Milliards d&apos;habitants&lt;/p&gt;&quot;},{&quot;content&quot;:&quot;&lt;p&gt;&lt;span class=\&quot;Apple-style-span\&quot; style=\&quot;color: rgb(102, 102, 102); font-family: &apos;Lucida Grande&apos;, &apos;Lucida Sans Unicode&apos;; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px; font-size: 18px; \&quot;&gt;9,6 Milliards d&apos;habitants&lt;/span&gt;&lt;/p&gt;&quot;},{&quot;content&quot;:&quot;&lt;p&gt;&lt;span class=\&quot;Apple-style-span\&quot; style=\&quot;color: rgb(102, 102, 102); font-family: &apos;Lucida Grande&apos;, &apos;Lucida Sans Unicode&apos;; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px; font-size: 18px; \&quot;&gt;5,5 Milliards d&apos;habitants&lt;/span&gt;&lt;/p&gt;&quot;}], &quot;resource&quot;:null}, &quot;options&quot;:[{&quot;name&quot;:&quot;input&quot;, &quot;value&quot;:&quot;checkbox&quot;}]}]}</content>
+</sample>

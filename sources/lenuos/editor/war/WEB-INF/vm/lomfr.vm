@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<lom xmlns="http://ltsc.ieee.org/xsd/LOM" 
+	xmlns:lomfr="http://www.lom-fr.fr/xsd/LOMFR">
+	
+    <general>
+        <identifier>
+            <catalog>URI</catalog>
+            <entry>$url</entry>
+        </identifier>
+        <title>
+            <string>$project.details.name</string>
+        </title>
+        <description>
+            <string>$project.details.description</string>
+        </description>
+        <aggregationLevel>3</aggregationLevel> <!-- 1 : course , 2 : lesson, 3 : object, 4 : element --> <!-- TODO -->
+        <lomfr:documentType>
+            <lomfr:source>LOMFRv1.0</lomfr:source>
+            <lomfr:value>texte</lomfr:value>
+        </lomfr:documentType>
+        <language>fr</language>
+    </general>
+    
+    <technical>
+        <format>application/zip</format>
+        <location>$url</location>
+        <otherPlatformRequirements>TNI</otherPlatformRequirements> <!-- All ressources produced are TNI -->
+    </technical>
+
+  <metaMetadata>
+    <identifier>
+      <catalog>$project.details.author.company</catalog>
+      <entry>$project.details.author.href</entry>
+    </identifier>
+    <contribute>
+      <role>
+        <source>LOMFRv1.0</source>
+        <value>creator</value>
+      </role>
+      <entity>BEGIN:vCard
+			N:$project.details.author.name
+			FN:$project.details.author.name, 
+			EMAIL;TYPE=INTERNET:$project.details.author.email
+			END:vCard
+		</entity>
+      <date>
+        <dateTime>$project.details.date</dateTime>
+      </date>
+    </contribute>
+    <metadataSchema>LOMFRv1.0</metadataSchema>
+    <language>fr</language>
+  </metaMetadata>
+
+</lom>

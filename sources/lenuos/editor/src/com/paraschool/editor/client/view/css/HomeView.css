@@ -1,0 +1,23 @@
+@sprite .arrowPratique{gwt-image:'arrowPratique';margin-left:360px;margin-bottom:20px;}
+@sprite .arrowEfficace{gwt-image:'arrowEfficace';width:282px;height:60px;background-position:top right;margin: 0 auto;}
+
+.menu{width:936px;height:320px;;margin:0 auto;}
+
+
+.container{width:312px;display:inline; float:left; margin:0;padding: 0;}
+.title {margin:0;height:30px;padding:15px 0;font-size: 2.6em;line-height: 100%; overflow: hidden; white-space: nowrap;}
+.subtitle {margin:0;color:otherColor;line-height: 1.6em;}
+
+.create, .open {padding:65px 35px 0; text-align: left; font-size: 100%;border:0;background:none;cursor:pointer;}
+.create, .open, .recent {background-position: center;font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;}
+
+@sprite .create{gwt-image:'create';}
+@sprite .open{gwt-image:'open';}
+@sprite .recent{gwt-image:'recent';padding: 0;}
+.content{width:245px; height: 145px;}
+.recent .content {margin: 83px auto 0;}
+.raccourci{width:272px;padding:0 20px 0 20px;margin-top:-8px;}
+.raccourci p{font-size:1.2em;color:highlightColor;margin:0;text-align: right;}
+.list {margin: 0;padding:0;list-style: none;}
+.list span {white-space: nowrap; text-overflow: ellipsis; overflow: hidden; display: block;}
+.list li:hover {color:highlightColor;}

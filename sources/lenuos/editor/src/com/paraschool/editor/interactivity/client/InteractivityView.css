@@ -1,0 +1,32 @@
+.container *{font-family: "Lucida Grande","Lucida Sans Unicode";}
+.container > .wrapper {position:relative;margin:10px auto;padding:3px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius:5px;-moz-box-shadow: #DADADA -1px 0px 4px;-webkit-box-shadow: #DADADA -1px 0px 4px;box-shadow: #DADADA -1px 0px 4px;background-color:white;}
+
+.container > .wrapper > .head{height:23px;}
+@sprite .container > .wrapper > .head .title{gwt-image:'title';float:left;padding-left:24px;width:auto;height:auto;float:left;line-height:23px;color:#888888;font-size:14px;}
+.container > .wrapper > .head .menus{float:right;}
+
+.optionsWrapper {margin: 10px 20px 0px; clear: both; overflow: hidden;
+			 transition-property: all; transition-duration: 500ms; transition-timing-function: ease-in-out; transition-delay: initial; 
+			 -webkit-transition-property: all; -webkit-transition-duration: 500ms; -webkit-transition-timing-function: ease-in-out; -webkit-transition-delay: initial; 
+			 -moz-transition-property: all; -moz-transition-duration: 500ms; -moz-transition-timing-function: ease-in-out; -moz-transition-delay: initial;
+			 -o-transition-property: all; -o-transition-duration: 500ms; -o-transition-timing-function: ease-in-out; -o-transition-delay: initial;
+		}
+.options{background-color: rgb(243, 243, 242); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(236, 236, 235); border-right-color: rgb(236, 236, 235); border-bottom-color: rgb(236, 236, 235); border-left-color: rgb(236, 236, 235); border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; border-bottom-right-radius: 5px 5px; border-bottom-left-radius: 5px 5px; -webkit-box-shadow: rgb(222, 222, 221) 0px 0px 2px inset;padding:0;margin:0;}
+.options > .head{margin:15px 30px;padding:0px;}
+@sprite .options > .head > .icon {gwt-image:"icon";float:left;width:56px;margin-right:-60px;}
+.options > .head > .wrapper {float:left;width:100%;}
+.options > .head > .wrapper > .title {margin-left:60px;font-size:13px;line-height:normal;color:#cccccc;}
+.options > .head > .wrapper > .title p {margin:0;padding:0;font-size:13px;line-height:normal;color:#cccccc;}
+.options > .head > .wrapper > .title > .title {margin-bottom:2px;font-size:18px;}		
+
+.optionsList{margin:0px 0px 0px 15px !important;}
+
+.content{margin:0;padding:0 40px 60px;overflow:hidden;clear:both;}
+
+.buttons {height:23px;}
+.buttons button:disabled {display: none;}
+
+.ibutton{border:0;padding:0;outline:0px;outline:none;background:none;cursor:pointer;color:#e6e3dc;font-size:14px;}
+@sprite .ibutton.plus {gwt-image:'plusbg';width:auto;padding-left:value('plusbg.getWidth','px');line-height:value('plusbg.getHeight','px');height:value('plusbg.getHeight','px');}
+@sprite .ibutton.plus.ibuttonactive {gwt-image:'plusActivebg';width:auto;padding-left:value('plusActivebg.getWidth','px');line-height:value('plusActivebg.getHeight','px');height:value('plusActivebg.getHeight','px');}
+@sprite .ibutton.delete {gwt-image:'deletebg';width:auto;padding-left:value('deletebg.getWidth','px');line-height:value('deletebg.getHeight','px');height:value('deletebg.getHeight','px');}

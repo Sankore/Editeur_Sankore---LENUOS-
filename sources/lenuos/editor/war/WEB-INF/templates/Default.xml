@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<details>
+		<url>images/icon.png</url>
+		<id>default</id>
+		<name>Gabarit original</name>
+		<description></description>
+	</details>
+	<location>default.zip</location>
+</template>

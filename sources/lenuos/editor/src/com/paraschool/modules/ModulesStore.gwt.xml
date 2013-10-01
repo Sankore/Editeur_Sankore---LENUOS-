@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.1.1//EN" 
+		"http://google-web-toolkit.googlecode.com/svn/tags/2.1.1/distro-source/core/src/gwt-module.dtd">
+
+<module rename-to='modulesstore'>
+	
+	<inherits name="com.paraschool.editor.api.EditorApi"/>
+	<inherits name="com.paraschool.editor.modules.EditorModules"/>
+	
+	<replace-with class="com.paraschool.modules.client.ModulesStore">
+		<when-type-is class="com.paraschool.editor.api.client.ModulesStore"/>
+	</replace-with>
+	
+</module>

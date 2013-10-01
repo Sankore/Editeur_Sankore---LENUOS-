@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample>
+	<details>
+		<id>segmenterlettre_1</id>
+		<module>segmenterlettre</module>
+		<name>Segmenter un mot</name>
+		<description></description>
+		<thumbnail>thumbnail.png</thumbnail>
+		<locale>fr</locale>		
+	</details>
+	<package>segmenterlettre_1_fr.zip</package>
+	<content>{&quot;statement&quot;:{&quot;statement&quot;:&quot;&lt;h3&gt;Ecoutez le son et séparer correctement les syllabes du mot.&lt;/h3&gt;&quot;, &quot;thumbnail&quot;:null, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;options&quot;:[{&quot;name&quot;:&quot;hide&quot;, &quot;value&quot;:&quot;hide&quot;},{&quot;name&quot;:&quot;switchStatement&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;sequence&quot;, &quot;value&quot;:null}], &quot;nodes&quot;:[{&quot;content&quot;:{&quot;statement&quot;:{&quot;statement&quot;:&quot;&quot;, &quot;sound&quot;:&quot;PSEditor-1358371413296985574.mp3&quot;, &quot;resource&quot;:null}, &quot;source&quot;:&quot;A*llu*met*te&quot;}, &quot;options&quot;:[]}]}</content>
+  <resources>
+    <entry>
+      <string>PSEditor-1358371413296985574.mp3</string>
+      <audio id="PSEditor-1358371413296985574.mp3" url="resources/PSEditor-1358371413296985574.mp3" mimetype="audio/mpeg" size="13400" locale="">
+        <name>allumette.mp3</name>
+        <info duration="-9223372036854" codec="CODEC_ID_MP3" format="FMT_S16"/>
+      </audio>
+    </entry>
+  </resources>	
+</sample>

@@ -1,0 +1,56 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:h="urn:import:com.paraschool.htmllist.client" 
+	xmlns:c="urn:import:com.paraschool.editor.modules.commons.client.ui">
+	
+	<ui:image field="plusbg" src="images/plus.png"></ui:image>
+	
+	<ui:style>
+		.container {position: relative;min-height:150px;}
+		.statement {margin:10px 5px;}
+		
+		.grid {width: 100%;}
+		
+		.cells {margin:0px;padding-left:25px;}
+		.cells ul {margin:0; padding:0;list-style:none;}
+
+		.resources {vertical-align:top; margin-left:10px;}
+		.resource {margin-left:50px;}
+		
+		.ibutton{border:0;padding:0;margin:0 0 0 30px;outline:0px;outline:none;background:none;cursor:pointer;color:#e6e3dc;font-size:18px;}
+		@sprite .ibutton.plus {gwt-image:'plusbg';width:auto;padding-left:value('plusbg.getWidth','px');line-height:value('plusbg.getHeight','px');height:value('plusbg.getHeight','px');}
+		
+		.add {}
+		.addButton {}
+	</ui:style>
+	
+	<g:HTMLPanel styleName="{style.container}">
+		<g:HTML ui:field="statement" styleName="{style.statement}"></g:HTML>
+		<g:Grid styleName="{style.grid}">
+			<g:row>
+			    <g:customCell>
+					<g:HTMLPanel styleName="{style.cells}">
+						<h:HTMLList ui:field="cells"></h:HTMLList>
+					</g:HTMLPanel>
+			    </g:customCell>
+			    <g:customCell>
+			    	<g:HTMLPanel>
+				    	<g:HTMLPanel styleName="{style.resources}">
+							<c:MediaContainer ui:field="resource" styleName="{style.resource}"></c:MediaContainer>
+						</g:HTMLPanel>
+						<g:HTMLPanel ui:field="buttons" styleName="{style.addButton}">
+							<g:Button ui:field="addResource"></g:Button>
+						</g:HTMLPanel>
+			    	</g:HTMLPanel>
+			    </g:customCell>
+			  </g:row>
+		</g:Grid>
+		<g:Button ui:field="add" styleName="{style.plus} {style.ibutton}" title="Ajouter une réponse">
+			<ui:attribute name="title" key="add.cell.button.title"/>
+			<ui:msg key="add.cell.button">Cliquez pour ajouter une réponse</ui:msg>
+		</g:Button>
+		
+	</g:HTMLPanel>
+	
+</ui:UiBinder> 

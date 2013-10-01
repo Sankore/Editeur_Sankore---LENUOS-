@@ -1,0 +1,17 @@
+.pageList table th.cellId,
+.pageList table td.cellId {
+	width: 50px;
+	text-align: center;
+}
+.pageList table th.cellName,
+.pageList table td.cellName {
+	width: 300px;
+}
+.pageList table th.cellType,
+.pageList table td.cellType {
+	width: 50px;
+}
+.pageList table th.cellFamily,
+.pageList table td.cellFamily {
+	width: 300px;
+}

@@ -1,0 +1,14 @@
+.button {border: none; background: none;margin:0;padding:0 0 0 25px; line-height: 20px; cursor: pointer;text-shadow:0px 1px 0px  #fff; font-size: 1.2em; color:#333;}
+@sprite .backButton {gwt-image:"backButton"; margin: 0 20px; display:block; float:left; width: auto;}
+.items {height:auto;margin:5px 0 0;padding:0;list-style: none;border-bottom: 1px solid #DAD8D2;}
+.items li {background-position:0 -1px;border-top: 1px solid #DAD8D2; padding-bottom: 20px;}
+@sprite .even{gwt-image:'even'; width: auto;}
+@sprite .odd{gwt-image:'odd'; width: auto;}
+@sprite .actions {gwt-image:'arrow';padding:23px 0 0 45px; width: auto; height: auto;}
+.actions .button {margin:0 10px;}
+@sprite .button.create {gwt-image:'createButton'; width: auto;}
+@sprite .button.view {gwt-image:'viewButton'; width: auto;}
+.interactivities {float:left; width: 1400px;}
+.examples {float:left;margin-left:-700px;}
+.examples.hide {display: none;}
+.examples li {padding-left:30px; padding-right:30px; padding-top: 20px;}

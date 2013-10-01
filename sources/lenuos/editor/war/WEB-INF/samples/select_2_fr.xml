@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample>
+	<details>
+		<id>select_2</id>
+		<module>select</module>
+		<name>Sélectionner un texte</name>
+		<description></description>
+		<thumbnail>thumbnail.png</thumbnail>
+		<locale>fr</locale>		
+	</details>
+	<package>select_2_fr.zip</package>
+	<content>{&quot;statement&quot;:{&quot;statement&quot;:&quot;&lt;h3&gt;Sélectionnez l&apos;instrument à corde dans cette liste.&lt;/h3&gt;&quot;, &quot;thumbnail&quot;:null, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;options&quot;:[{&quot;name&quot;:&quot;hide&quot;, &quot;value&quot;:&quot;hide&quot;},{&quot;name&quot;:&quot;switchStatement&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;sequence&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;switchNode&quot;, &quot;value&quot;:null}], &quot;nodes&quot;:[{&quot;content&quot;:{&quot;statement&quot;:{&quot;statement&quot;:&quot;&quot;, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;blocs&quot;:[{&quot;text&quot;:&quot;&lt;h2&gt;saxophone&lt;/h2&gt;&quot;},{&quot;text&quot;:&quot;&lt;h2&gt;clarinette&lt;/h2&gt;&quot;},{&quot;text&quot;:&quot;&lt;h2&gt;trompette&lt;/h2&gt;&quot;},{&quot;text&quot;:&quot;&lt;h2&gt;guitare&lt;/h2&gt;&quot;}]}, &quot;options&quot;:[{&quot;name&quot;:&quot;input&quot;, &quot;value&quot;:&quot;checkbox&quot;},{&quot;name&quot;:&quot;resourceAlignement&quot;, &quot;value&quot;:&quot;BOTTOM&quot;}]}]}</content>
+</sample>

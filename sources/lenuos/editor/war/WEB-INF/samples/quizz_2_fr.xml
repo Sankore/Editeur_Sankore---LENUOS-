@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample>
+	<details>
+		<id>quizz_2</id>
+		<module>quizz</module>
+		<name>Choisir plusieurs réponses</name>
+		<description></description>
+		<thumbnail>thumbnail.png</thumbnail>
+		<locale>fr</locale>		
+	</details>
+	<package>quizz_2_fr.zip</package>
+	<content>{&quot;statement&quot;:{&quot;statement&quot;:&quot;&lt;h3&gt;Choisissez les réponses à cette question.&lt;/h3&gt;&quot;, &quot;thumbnail&quot;:null, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;options&quot;:[{&quot;name&quot;:&quot;hide&quot;, &quot;value&quot;:&quot;hide&quot;},{&quot;name&quot;:&quot;switchStatement&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;sequence&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;switchNode&quot;, &quot;value&quot;:null}], &quot;nodes&quot;:[{&quot;content&quot;:{&quot;statement&quot;:&quot;&lt;h1&gt;Quels animaux vivent dans l&apos;eau ?&lt;/h1&gt;&quot;, &quot;cells&quot;:[{&quot;content&quot;:&quot;&lt;h1&gt;Le poisson&lt;/h1&gt;&quot;},{&quot;content&quot;:&quot;&lt;h1&gt;Le chien&lt;/h1&gt;&quot;},{&quot;content&quot;:&quot;&lt;h1&gt;La baleine&lt;/h1&gt;&quot;}], &quot;resource&quot;:null}, &quot;options&quot;:[{&quot;name&quot;:&quot;input&quot;, &quot;value&quot;:&quot;radio&quot;}]}]}</content>
+</sample>

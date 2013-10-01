@@ -1,0 +1,29 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	ui:generateFormat="com.google.gwt.i18n.rebind.format.PropertiesFormat">
+	
+	<ui:image field="separator" src="images/statement-separator.png"></ui:image>
+	<ui:image field="ibuttonsound" src="images/ibutton-sound.png"></ui:image>
+	<ui:image field="ibuttonresource" src="images/ibutton-resource.png"></ui:image>
+	
+	<ui:style>
+		.separator {line-height:1px;width:100%;min-height:1px;text-align:center;}
+		.ibutton{border:0;padding:0;outline:0px;outline:none;background:none;cursor:pointer;color:#e6e3dc;font-size:14px;}
+		.ibutton{margin-right:20px}
+		@sprite .ibutton.sound {gwt-image:'ibuttonsound';width:auto;padding-left:value('ibuttonsound.getWidth','px');line-height:value('ibuttonsound.getHeight','px');height:value('ibuttonsound.getHeight','px');}
+		@sprite .ibutton.resource {gwt-image:'ibuttonresource';width:auto;padding-left:value('ibuttonresource.getWidth','px');line-height:value('ibuttonresource.getHeight','px');height:value('ibuttonresource.getHeight','px');}
+		.controls {width:100%;text-align:center;margin-bottom:30px;}
+		.controls button:disabled {display:none;}
+	</ui:style>
+	
+	<g:HTMLPanel>
+		<div class="{style.separator}">
+		    <img src="{separator.getURL}" align="absmiddle"/>
+		</div>
+		<div class="{style.controls}">
+		    <g:Button ui:field="addSound" styleName="{style.sound} {style.ibutton}" title="Ajouter un son"><ui:attribute name="title" key="add.sound.title"/><ui:msg key="add.sound.button">Son</ui:msg></g:Button>
+		    <g:Button ui:field="addResource" styleName="{style.resource} {style.ibutton}" title="Ajouter une ressource"><ui:attribute name="title" key="add.resource.title"/><ui:msg key="add.resource.button">Ressource</ui:msg></g:Button>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

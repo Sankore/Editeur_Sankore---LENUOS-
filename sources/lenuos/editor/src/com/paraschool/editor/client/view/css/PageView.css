@@ -1,0 +1,5 @@
+.page{width:pageWidth;margin:0;}
+.display{width:displayWidth;min-height:pageHeight;height:auto !important; height:pageHeight;float:left;}
+@sprite .displayHead{gwt-image:'displayHead';width:displayWidth;background-position:top;}
+@sprite .area{gwt-image:'area';width:displayWidth;min-height:500px;height:auto !important; height:500px;background-position:top;}
+@sprite .displayBottom{gwt-image:'displayBottom';width:displayWidth; background-position:top;}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+#set ($project = $projects.get(0))
+<widget xmlns="http://www.w3.org/ns/widgets"
+	version="$project.details.version"
+	height="$project.details.height" width="$project.details.width"
+	viewmodes="widget">
+
+	
+	#foreach ($p in $projects)
+	<name #if($p.details.locale) xml:lang="$p.details.locale" #end>
+		$p.details.name
+	</name>
+	<description #if($p.details.locale) xml:lang="$p.details.locale" #end>
+		$p.details.description
+	</description>	
+	#end
+	
+	<content src="$entries.get("")" encoding="UTF-8" />
+	
+	<author href="$project.details.author.href" email="$project.details.author.email">
+		$project.details.author.name @ $project.details.author.company
+	</author>
+	#if($project.details.icon)
+		<icon src="$project.details.icon"/>
+	#end
+</widget>

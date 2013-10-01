@@ -1,0 +1,12 @@
+@def windowTopPosition 98px;
+.container{width:904px;margin:2px auto;}
+.container .window{width: 904px;z-index:1;position: absolute;top: windowTopPosition;left: 50%;margin:0px;padding: 0px;margin-left: -452px;}
+.container .window > div {margin-bottom: 50px;}
+.calque{opacity:.60;padding: 0px;background-color: #000000;min-width: 100%;min-height : 100%;z-index:1;}
+
+/*.calque{position:absolute; top : 0;left : 0 ;right:0; bottom:0;}*/
+.calque{position:fixed;top : 0;left : 0 ;right:0; bottom:0;}
+
+@if user.agent ie7 ie8 {
+	.calque{filter: literal( "alpha(opacity=60)" );}
+}

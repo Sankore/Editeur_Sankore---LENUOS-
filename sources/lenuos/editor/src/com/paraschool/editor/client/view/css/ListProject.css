@@ -1,0 +1,58 @@
+@sprite .arrowChoixProj{gwt-image:'arrowChoixProj'; height:79px;margin:-22px 0 0 -80px;}
+
+.returnButtonWrapper{width:auto;height:auto;position:relative;margin:115px 0 0 0;padding: 0px 15px;} 	
+@sprite .arrowRetour{gwt-image:'arrowRetour';padding:4px 0; background-position: right; width: auto; height: auto;}
+@sprite .returnButton{gwt-image:'returnButton';background-position:bottom;margin-top:82px;border:none;cursor: pointer;}
+
+.root{width:936px;margin:0px auto; padding-top: 78px;}
+.menu{float:left;margin: 8px 15px 0px 0px;}
+
+.container{width:312px;display:inline; float:left; margin:0;padding: 0;}
+.title {margin:0;height:30px;padding:15px 0;font-size: 2.6em;line-height: 100%; overflow: hidden; white-space: nowrap;}
+.subtitle {margin:0;color:otherColor;line-height: 1.6em;}
+@sprite .list{gwt-image:'list';background-position: center;font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;}
+.list .content {width:245px; height: 145px;margin: 83px auto 0;}
+
+.wrapper{height:auto;margin-top:-10px;}/*-10 en marge parce que l'image de la flèche est trop grande*/
+.projects{height:auto;list-style:none;margin: 0;padding: 0;}
+.projects li{display:block;position:relative;margin:0 auto 10px;}
+
+.boxRoot {}
+@sprite .box{gwt-image:'box';}
+@sprite .box.opened{gwt-image:'opened';}
+.box, .box.opened {}
+.boxWrapper {margin:20px 0;}
+
+.left{width:468px;margin:0px;}
+.left div{margin:0 10px 0 48px;}
+.right{width:98px; text-align: center;}
+
+
+.name {height:54px;overflow:hidden;margin:0;}
+.name span{font-size:1.5em;line-height:1.5em;color:#666;}
+.date {height:16px;overflow:hidden;margin:0;}
+.date span{font-size:0.85em;line-height:1.5em;color:otherColor;}
+ 
+ .delete{position: absolute;top:0;right:0;margin:17px -30px 0 0;}
+ @sprite .delete button {gwt-image:'delete';padding:0;border:none;cursor: pointer;}
+
+.description{margin:-10px 5px 0 0;position:relative;z-index:-1; padding-left: 34px;}
+.objectif,
+.details{padding:10px 10px 5px;/*position:relative;*/line-height:1.5em;color:otherColor;}
+
+@sprite .description .head{gwt-image:'head';overflow:visible;background-position:top left;}
+@sprite .description .bottom{gwt-image:'bottom';background-position:bottom;}
+
+.open .detail {width:74px;height:28px;}
+@sprite .open{gwt-image:'open';color:#fff;padding:0;border:none;cursor: pointer;font-size: 1.2em;}
+.detail{margin:20px auto 0;font-size:1.2em;line-height:1.75em;color:#666;font-style:italic;padding:0;border:none;background:none;cursor: pointer;}
+
+.create {margin-top: 150px;font-size:1.5em;line-height:1.5em;color:#666;cursor:pointer;}
+
+.sorts {text-align: right; padding-right: 10px;}
+.sorts button {margin:0 0 0 5px; padding:0; border:none; background:none; cursor: pointer;color: otherColor;font-size: 1.5em;}
+.selectedSort {color: textColor !important;}
+
+.paging {list-style: none; margin:0 auto;max-width:500px;  padding:0; text-align: center;}
+.paging li {display: inline-block;font-size: 1.5em; cursor: pointer;margin: 0 5px; color: otherColor; *display:inline; *zoom:1;}
+.paging li:hover, .selectedPage {color: textColor !important;}

@@ -1,0 +1,33 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:app="urn:import:com.paraschool.editor.client.view"
+	xmlns:h="urn:import:com.paraschool.htmllist.client">
+	
+	<ui:with type="com.paraschool.editor.client.view.AppResources" field="res"></ui:with>
+	<ui:style>
+		.container {background: #F7F7F7;border-radius: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;color: #666; min-height: 150px;}
+		.bar {height: 40px;}
+		.advice {text-align: center;margin:5px 35px 0 10px;font-style: italic;font-size: 13px;}
+		.urls {padding: 0 40px 40px;}
+		.title {font-size: 18px; color: #333;}
+		.subtitle {font-size: 14px; margin:0;}
+		.close{float:right;margin:5px 5px 0px;}
+		.urls ul {list-style: decimal;}
+	</ui:style>
+	
+	<g:FlowPanel ui:field="container" styleName="{style.container}">
+		<g:HTMLPanel styleName="{style.bar}">
+			<g:Button ui:field="closeButton"  styleName="{res.appCss.close} {style.close}"></g:Button>
+		</g:HTMLPanel>
+		<g:HTMLPanel ui:field="waitingPanel">
+			<g:HTML styleName="{style.advice}"><ui:msg key="waiting.message">Patientez...</ui:msg></g:HTML>
+		</g:HTMLPanel>
+		<g:HTMLPanel ui:field="urlsPanel" styleName="{style.urls}">
+			<g:HTML styleName="{style.title}"><ui:msg key="title.message">Vos téléchargements</ui:msg></g:HTML>
+			<p class="{style.subtitle}"><ui:msg key="subtitle.message">Pour télécharger les fichiers d'export cliquez sur les liens ci-dessous.</ui:msg></p>
+			<h:HTMLList ui:field="urls"></h:HTMLList>
+		</g:HTMLPanel>
+	</g:FlowPanel>
+
+</ui:UiBinder> 

@@ -1,0 +1,6 @@
+.subView{width:884px;margin:3px 10px;position:absolute;z-index:998;}
+.subViewHead, .subViewBottom{width:884px;height:7px;position:relative;}
+@sprite .subViewHead{gwt-image:'subViewHead'; background-position:top;}
+@sprite .subViewBottom{gwt-image:'subViewBottom'; background-position:bottom;}
+@sprite .subViewContent{gwt-image:'subViewContent';min-height:300px; max-height:494px; width:884px;overflow:auto;background-position:top;}
+.viewLoading{margin-top:-10px;margin-left:-110px;top:50%; left:50%;display:block;}

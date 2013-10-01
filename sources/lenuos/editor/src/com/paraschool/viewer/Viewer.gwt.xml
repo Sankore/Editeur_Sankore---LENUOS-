@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.1.1//EN" 
+	"http://google-web-toolkit.googlecode.com/svn/tags/2.1.1/distro-source/core/src/gwt-module.dtd">
+	
+<module rename-to='viewer'>
+
+	<entry-point class='com.paraschool.viewer.client.Viewer' />
+
+	<inherits name="com.paraschool.commons.Commons"/>
+	
+	<define-property values="none, ps" name="lms.host"/>
+	<property-provider name="lms.host"><![CDATA[
+		var Item = null;
+		function findItem(win)
+		{
+			while ((win.Item == null) && (win.parent != null) && (win.parent != win))
+			{
+				win = win.parent;
+			}
+			Item = win.Item;
+		}		
+		findItem(window);
+		
+		if ((Item == null) && (window.opener != null))
+		{
+			findItem(window.opener);
+		}
+		if(Item != null)
+			return "ps";
+		
+		var API = null;
+		function findAPI(win)
+		{
+			while ((win.API == null) && (win.parent != null) && (win.parent != win))
+			{
+				win = win.parent;
+			}
+			API = win.API;
+		}
+		
+		findAPI(window);
+		
+		if ((API == null) && (window.opener != null))
+		{
+			findAPI(window.opener);
+		}
+		
+		if(API != null)
+			return "scorm";
+		
+		return "none";
+	]]></property-provider>
+	
+	<replace-with class="com.paraschool.viewer.client.impl.NullHostAPIImpl">
+		<all>
+			<when-type-assignable class="com.paraschool.viewer.client.impl.HostAPIImpl"/>
+			<when-property-is name="lms.host" value="none"/>
+		</all>		
+	</replace-with>
+	<replace-with class="com.paraschool.viewer.client.impl.PSHostAPIImpl">
+		<all>
+			<when-type-assignable class="com.paraschool.viewer.client.impl.HostAPIImpl"/>
+			<when-property-is name="lms.host" value="ps"/>
+		</all>		
+	</replace-with>
+		
+	<source path="client"/>
+	
+	<!--
+	<set-property name="user.agent" value="safari"/>
+	<set-property name="locale" value="fr"/>
+	-->
+</module>

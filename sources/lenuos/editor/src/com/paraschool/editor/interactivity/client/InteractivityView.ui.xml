@@ -1,0 +1,52 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:h="urn:import:com.paraschool.htmllist.client">
+
+	<ui:with type="com.paraschool.editor.interactivity.client.InteractivityView.Resources" field="res"></ui:with>
+
+	<ui:style>
+		.indicator {
+			position: absolute;
+			left: 50%;
+			margin-left: -110px;
+			margin-top: 5px;
+		}
+		.moveButton {display:inline;}
+	</ui:style>
+
+	
+	<g:HTMLPanel styleName="{res.css.container}">
+		<g:HTMLPanel styleName="{res.css.wrapper}">
+			<g:HTMLPanel styleName="{res.css.head}">
+				<g:FocusPanel ui:field="moveButton"><g:HTML ui:field="title" styleName="{res.css.title}"></g:HTML></g:FocusPanel>
+				<g:HTMLPanel ui:field="menuContainer" styleName="{res.css.menus}">
+					<g:HTMLPanel styleName="{res.css.buttons}">
+						<g:Button ui:field="preferenceButton" styleName="{res.css.plus} {res.css.ibutton}" title="Afficher les options"><ui:attribute name="title" key="module.show.options.title"/><ui:msg key="module.show.options.button">Options</ui:msg></g:Button>
+						<g:Button ui:field="hidePreferenceButton" styleName="{res.css.plus} {res.css.ibutton} {res.css.ibuttonactive}" title="Fermer les options"><ui:attribute name="title" key="module.hide.options.title"/><ui:msg key="module.hide.options.button">Fermer</ui:msg></g:Button>
+						<g:Button ui:field="deleteButton" styleName="{res.css.delete} {res.css.ibutton}" title="Supprimer cette activité"><ui:attribute name="title" key="module.delete.title"/><ui:msg key="module.delete.button">Supprimer</ui:msg></g:Button>
+					</g:HTMLPanel> 
+				</g:HTMLPanel>
+   			</g:HTMLPanel>
+   			<g:HTMLPanel  ui:field="optionsWrapper" styleName="{res.css.optionsWrapper}">
+   				<g:HTMLPanel ui:field="optionsContainer" styleName="{res.css.options}">
+					<g:HTMLPanel styleName="{res.css.head}">
+						<div class="{res.css.icon}"/>
+						<div class="{res.css.wrapper}">
+							<div class="{res.css.title}">
+								<p class="{res.css.title}"><ui:msg key="options.title">Options de l'activité en cours</ui:msg></p>
+								<p><ui:msg key="options.subtitle">Ces options vous permettent de modifier le comportement de l'activité en cours d’édition. Les configurations que vous choisissez seront visibles lors de la prévisualisation ou l’exportation de votre projet.</ui:msg></p>
+							</div>
+						</div>
+						<div style="clear:both;"/>
+					</g:HTMLPanel>
+					<g:FlowPanel ui:field="options" styleName="{res.css.optionsList}"/>
+				</g:HTMLPanel>
+   			</g:HTMLPanel>
+			<g:FlowPanel ui:field="content" styleName="{res.css.content}">
+				<g:Image ui:field="loadingIndicator" url='{res.loading.getURL}'	styleName="{style.indicator}"></g:Image>
+			</g:FlowPanel>
+		</g:HTMLPanel>
+		<div style="clear:both;"></div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

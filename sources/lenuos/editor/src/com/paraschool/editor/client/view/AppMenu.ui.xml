@@ -1,0 +1,61 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:app="urn:import:com.paraschool.editor.client.view" 
+	xmlns:h="urn:import:com.paraschool.htmllist.client">
+	
+	<ui:style>
+		.link_menuImg{font-size:14px;line-height:28px;padding-left:5px;}
+		
+		@sprite .save {
+			gwt-image:'saveBg';
+			padding-left: 25px;	
+			width: auto !important;
+		}
+		@sprite .preview {
+			gwt-image:'previewBg';
+			padding-left: 25px;	
+			width: auto !important;
+		}
+		@sprite .export {
+			gwt-image:'exportBg';
+			padding-left: 25px;	
+			width: auto !important;
+		}
+		@sprite .publish {
+			gwt-image:'publishBg';
+			padding-left: 25px;	
+			width: auto !important;
+		}
+		@sprite .quit {
+			gwt-image:'quitBg';
+			padding-left: 25px;	
+			width: auto !important;
+		}
+	</ui:style>
+	
+	<ui:image field='saveBg' src="images/icn_menu1_enregistrer.png"></ui:image>
+	<ui:image field='previewBg' src="images/icn_menu1_previsualiser.png"></ui:image>
+	<ui:image field='publishBg' src="images/icn_menu1_publier.png"></ui:image>
+	<ui:image field='exportBg' src="images/icn_menu1_exporter.png"></ui:image>
+	<ui:image field='quitBg' src="images/icn_menu1_quitter.png"></ui:image> 
+	
+	<h:HTMLList>
+		<h:HTMLListItem ui:field="save" styleName='{style.save}' title="Enregistrer le projet"><ui:attribute name="title" key="appmenu.save.button.title"/>
+			<g:InlineLabel styleName='{style.link_menuImg}'><ui:msg key="appmenu.save.button">Enregistrer</ui:msg></g:InlineLabel>
+		</h:HTMLListItem>
+		<h:HTMLListItem ui:field="preview" styleName='{style.preview}' title="Prévisualiser le projet"><ui:attribute name="title" key="appmenu.preview.button.title"/>
+			<g:InlineLabel styleName='{style.link_menuImg}'><ui:msg key="appmenu.preview.button">Prévisualiser</ui:msg></g:InlineLabel>
+		</h:HTMLListItem>
+		<h:HTMLListItem ui:field="export" styleName='{style.export}' title="Exporter le projet"><ui:attribute name="title" key="appmenu.export.button.title"/>
+			<g:InlineLabel styleName='{style.link_menuImg}'><ui:msg key="appmenu.export.button">Exporter</ui:msg></g:InlineLabel>
+		</h:HTMLListItem>
+		<h:HTMLListItem ui:field="publish" styleName='{style.publish}' title="Publier le projet"><ui:attribute name="title" key="appmenu.publish.button.title"/>
+			<g:InlineLabel styleName='{style.link_menuImg}'><ui:msg key="appmenu.publish.button">Publier</ui:msg></g:InlineLabel>
+		</h:HTMLListItem>
+		<h:HTMLListItem ui:field="quit" styleName='{style.quit}' title="Fermer le projet"><ui:attribute name="title" key="appmenu.quit.button.title"/>
+			<g:InlineLabel styleName='{style.link_menuImg}'><ui:msg key="appmenu.quit.button">Fermer</ui:msg></g:InlineLabel>
+		</h:HTMLListItem>
+	</h:HTMLList>
+	
+</ui:UiBinder> 

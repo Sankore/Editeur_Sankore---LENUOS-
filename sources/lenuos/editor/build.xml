@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="SankoreEditor" default="build" basedir=".">
+
+	<property environment="env" />
+	<property file="${basedir}/build.properties" />
+	<property name="version.num" value="${version.num}" />
+	<buildnumber file="${basedir}/build.num" />
+
+	<tstamp>
+		<format property="TODAY" pattern="yyyy-MM-dd HH:mm:ss" />
+	</tstamp>
+
+	<!-- Configure path to GWT SDK -->
+	<property name="gwt.sdk" location="${gwt.sdk}" />
+	<property name="gwt.logLevel" value="${gwt.logLevel}"/>
+	
+	<!-- Configure path to Xuggler SDK -->
+	<property name="xuggler.sdk" location="${xuggler.sdk}" />
+
+	<!-- Configure class path for compilation -->
+	<path id="commons.classpath">
+		<pathelement location="${gwt.sdk}/gwt-user.jar" />
+		<fileset dir="${gwt.sdk}" includes="gwt-dev*.jar" />
+	</path>
+
+	<path id="project.classpath">
+		<pathelement location="war/WEB-INF/classes" />
+		<pathelement location="${api.product}" />
+		<pathelement location="${modules.product}" />
+		<pathelement location="${rte.product}" />
+		<path refid="commons.classpath" />
+		<fileset dir="war/WEB-INF/lib" includes="**/*.jar" />
+		<fileset dir="${xuggler.sdk}" includes="xuggle-xuggler.jar, commons-cli.jar" />
+	</path>
+
+	<!-- Server side java compilation -->
+	<target name="compile" description="Compile editor source">
+		<mkdir dir="war/WEB-INF/classes" />
+		<javac srcdir="src" includes="**" encoding="utf-8" destdir="war/WEB-INF/classes" source="1.5" target="1.5" nowarn="true" debug="true" debuglevel="lines,vars,source">
+			<classpath refid="project.classpath" />
+		</javac>
+		<copy todir="war/WEB-INF/classes">
+			<fileset dir="src" excludes="**/*.java" />
+		</copy>
+	</target>
+
+	<target name="install-modules" description="Install modules in projet">
+		<copy todir="modules" verbose="true">
+			<fileset dir="${project.bin}" includes="${modules.jar.list}" />
+		</copy>
+	</target>
+
+	<target name="desinstal-modules">
+		<delete dir="modules" includes="**" failonerror="false" />
+	</target>
+
+	<!-- Editor GWT compilation -->
+	<target name="editor" depends="compile, install-modules" description="GWT compile to JavaScript">
+		<java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler">
+			<classpath>
+				<pathelement location="src" />
+				<fileset dir="modules" includes="**/*.jar" />
+				<path refid="project.classpath" />
+			</classpath>
+			<!-- add jvmarg -Xss16M or similar if you see a StackOverflowError -->
+			<jvmarg value="-Xmx512M" />
+			<jvmarg value="-Xss16M" />
+			<!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+			<arg value="-localWorkers" />
+			<arg value="1" />
+			<arg value="-logLevel" />
+			<arg value="${gwt.logLevel}" />
+			<arg value="com.paraschool.editor.Editor" />
+		</java>
+	</target>
+
+	<!-- GIP Editor GWT compilation -->
+	<target name="gip" depends="compile, install-modules" description="GWT compile to JavaScript">
+		<java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler">
+			<classpath>
+				<pathelement location="src" />
+				<fileset dir="modules" includes="**/*.jar" />
+				<path refid="project.classpath" />
+			</classpath>
+			<!-- add jvmarg -Xss16M or similar if you see a StackOverflowError -->
+			<jvmarg value="-Xmx512M" />
+			<jvmarg value="-Xss16M" />
+			<!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+			<arg value="-localWorkers" />
+			<arg value="1" />
+			<arg value="-logLevel" />
+			<arg value="${gwt.logLevel}" />
+			<arg value="com.paraschool.editor.gip.Gip" />
+		</java>
+	</target>
+
+	<!-- Viewer GWT compilation -->
+	<target name="viewer" depends="compile, install-modules" description="GWT compile to JavaScript">
+		<java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler">
+			<classpath>
+				<pathelement location="src" />
+				<fileset dir="modules" includes="**/*.jar" />
+				<path refid="project.classpath" />
+			</classpath>
+			<!-- add jvmarg -Xss16M or similar if you see a StackOverflowError -->
+			<jvmarg value="-Xmx512M" />
+			<jvmarg value="-Xss16M" />
+			<!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+			<arg value="-localWorkers" />
+			<arg value="1" />
+			<arg value="-logLevel" />
+			<arg value="${gwt.logLevel}" />
+			<arg value="com.paraschool.viewer.Viewer" />
+		</java>
+	</target>
+
+	<!-- build application -->
+	<target name="build" depends="clean, viewer, editor, desinstal-modules" description="Create a war file">
+		<mkdir dir="${project.bin}" />
+		<manifest file="${basedir}/MANIFEST.MF">
+			<attribute name="Built-By" value="${user.name}" />
+			<attribute name="Implementation-Version" value="${version.num}-b${build.number}" />
+			<attribute name="Built-Date" value="${TODAY}" />
+		</manifest>
+		<replace dir="war/WEB-INF/classes/">
+			<include name="**/*.properties"/>
+			<replacefilter token="$application.version$" value="${version.num}"/>
+			<replacefilter token="$application.build$" value="${build.number}"/>
+			<replacefilter token="$application.buildDate$" value="${TODAY}"/>
+		</replace>
+		<war destfile="${project.bin}/${project.product}" basedir="war" manifest="${basedir}/MANIFEST.MF" />
+		<delete file="${basedir}/MANIFEST.MF" failonerror="false" />
+	</target>
+
+	<target name="standalone-app" depends="build">
+		<mkdir dir="temp" />
+		<unjar dest="temp" src="lib/winstone-0.9.10.jar"/>
+		<copy file="${project.bin}/${project.product}" tofile="temp/embedded.war" verbose="true"/>
+		<jar destfile="${project.bin}/${standalone.product}" basedir="temp" manifest="temp/META-INF/MANIFEST.MF"></jar>
+		<delete dir="temp" failonerror="false" />
+	</target>
+
+	<!-- build cleanup -->
+	<target name="clean" description="Cleans this project">
+		<delete dir="classes" failonerror="false" />
+		<delete dir="war/WEB-INF/classes" failonerror="false" />
+		<delete dir="war/viewer" failonerror="false" />
+		<delete dir="war/editor" failonerror="false" />
+		<delete file="war/WEB-INF/viewer.zip" failonerror="false" />
+		<delete file="${project.bin}/${project.product}" failonerror="false" />
+		<delete file="${project.bin}/${standalone.product}" failonerror="false" />
+	</target>
+	
+	<target name="archive" description="Archive this build result">
+		<mkdir dir="${project.bin}/${version.num}-b${build.number}"/>
+		<copy file="${project.bin}/${project.product}" todir="${project.bin}/${version.num}-b${build.number}" failonerror="false"/>
+		<copy file="${project.bin}/${standalone.product}" todir="${project.bin}/${version.num}-b${build.number}" failonerror="false"/>
+	</target>
+	
+</project>

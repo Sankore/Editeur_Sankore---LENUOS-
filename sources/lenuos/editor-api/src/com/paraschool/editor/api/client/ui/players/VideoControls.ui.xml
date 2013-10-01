@@ -1,0 +1,110 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	
+	<ui:image field="controlsbarleft" src="video-player-controls-bar-left.png"></ui:image>
+	<ui:image field="controlsbarright" src="video-player-controls-bar-right.png"></ui:image>
+	<ui:image field="controlsbar" src="video-player-controls-bar.png" repeatStyle="Horizontal"></ui:image>
+	
+	<ui:image field="playbutton" src="video-player-play.png" repeatStyle="Horizontal"></ui:image>
+	<ui:image field="pausebutton" src="video-player-pause.png" repeatStyle="Horizontal"></ui:image>
+	
+	<ui:image field="progessbarbgleft" src="video-player-progessbar-bg-left.png"></ui:image>
+	<ui:image field="progessbarbgright" src="video-player-progessbar-bg-right.png"></ui:image>
+	<ui:image field="progessbarbg" src="video-player-progessbar-bg.png" repeatStyle="Horizontal"></ui:image>
+	
+	<ui:image field="progessbarleft" src="video-player-progessbar-left.png"></ui:image>
+	<ui:image field="progessbarright" src="video-player-progessbar-right.png"></ui:image>
+	<ui:image field="progessbar" src="video-player-slider.png" repeatStyle="Horizontal"></ui:image>
+	
+	<ui:style field="css" type="com.paraschool.editor.api.client.ui.players.AbstractControls.CssResource">
+		@external video-player-controls, controls-bar-left, controls-bar,controls-bar-right, wrapper, controls;
+		@external controls-boutons, play, pause, progessbar-wrapper, progessbar-bg-left, duration, elapse;
+		@external progessbar-bg, progessbar-bg-right, progessbar, progessbar-left, slider, progessbar-right;
+		@external state-playing, state-pausing, state-loading, controls-wrapper, native-media;
+		
+		.video-player-controls { position:relative; width:100%; margin:0px auto; padding:0px; display:block;overflow: hidden;}
+		
+		.video-player-controls > .controls-wrapper {width:100%;height:27px;}
+		.video-player-controls.native-media > .controls-wrapper {position:absolute;margin-top:0; opacity:0;-webkit-transition: margin-top 0.25s ease-in-out, opacity 0.50s ease-in-out;-moz-transition: margin-top 0.25s ease-in-out, opacity 0.50s ease-in-out;-o-transition: margin-top 0.25s ease-in-out, opacity 0.50s ease-in-out;transition: margin-top 0.25s ease-in-out, opacity 0.50s ease-in-out;}
+		.video-player-controls.native-media:hover > .controls-wrapper {margin-top:-27px; opacity:1;}
+		
+		.video-player-controls > .controls-wrapper > .controls-bar-left { width:4px; height:27px; margin-right:-100%; margin-top:0px; margin-left:0px; margin-bottom:0px; padding:0px; float:left;}
+		@sprite .video-player-controls > .controls-wrapper > .controls-bar-left > div {gwt-image:'controlsbarleft'; width:4px; height:27px; line-height:27px; display:block; background-position:left; }
+		
+		.video-player-controls > .controls-wrapper > .controls-bar { width: 100%; height:27px; float: left; margin:0px auto; padding:0px; display:block;}
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper { height:27px; margin: 0px 4px 0px 4px; padding:0px; display:block;}
+		@sprite .video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div {gwt-image:'controlsbar'; min-width:100%; _width: 100%; width:100%; height:27px; line-height:27px; margin:0px; padding:0px; display:block; background-position:left; }
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .controls { width:75px; height:27px; margin-right:-100%; margin-top:0px; margin-left:0px; margin-bottom:0px; padding:0px; float:left;z-index:1;position:relative;}
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .controls > .duration {font-family:"Lucida Sans Unicode",Arial,Verdana,sans-serif;text-align:right; width:auto; height:27px; line-height:30px; margin:0px 10px 0px 0px; padding:0px; overflow:hidden; white-space:nowrap; color:#ffffff; font-size:10px;cursor: pointer;}
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .controls > .elapse {font-family:"Lucida Sans Unicode",Arial,Verdana,sans-serif;text-align:right; width:auto; height:27px; line-height:30px; margin:0px 10px 0px 0px; padding:0px; overflow:hidden; white-space:nowrap; color:#ffffff; font-size:10px;cursor: pointer;}
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .controls > .controls-boutons { width:15px; height:27px; margin:0px 6px 0px 6px; padding:0px; float:left; display:block;}
+		
+		@sprite .video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .controls > .controls-boutons  > .play {gwt-image:'playbutton';  width:15px; height:27px; margin:0px; padding:0px; display:block; border:none; cursor:pointer; }
+		@sprite .video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .controls > .controls-boutons  > .pause {gwt-image:'pausebutton'; width:15px; height:27px; margin:auto; padding:0px; display:block; border:none; cursor:pointer; }
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .controls > .controls-boutons  > .play:disabled,
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .controls > .controls-boutons  > .pause:disabled {cursor: auto;display: none;}
+		
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper { position:relative;width:100%;  height:17px; margin:10px 5px 0px 0px; float:left;}
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div { position:relative; height:10px; margin-left:75px;}
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar-bg-left { width:5px; height:10px; margin-right:-5px; margin-top:0px; margin-left:0px; margin-bottom:0px; padding:0px; float:left; }
+		
+		@sprite .video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar-bg-left > div {gwt-image:'progessbarbgleft'; width:5px; height:10px; line-height:10px;  display:block; background-position:left; }
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar-bg-right { width:5px; height:10px; margin-left:-5px; margin-top:0px; margin-right:0px; margin-bottom:0px;padding:0px; float:left; }
+		@sprite .video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar-bg-right > div {gwt-image:'progessbarbgright'; width:5px; height:10px;  line-height:10px; display:block; background-position:right; }
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar-bg { width: 100%; height:10px; float: left; margin:0px; padding:0px; display:block; }
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar-bg > div { width:auto; height:10px; margin: 0px 5px 0px 5px; padding:0px; display:block; }
+		@sprite .video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar-bg > div > div{gwt-image:'progessbarbg'; min-width:100%; _width: 100%; width:100%; height:10px; line-height:10px; margin:0px; padding:0px; display:block; background-position:left; }
+		
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar { position:absolute; top:0; left:0; width:100%; height:10px; margin:0px; padding:0px; z-index:1;}
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar > .progessbar-left { width:4px; height:10px; margin-right:-100%; margin-top:0px; margin-left:0px; margin-bottom:0px; padding:0px; float:left;}
+		
+		@sprite .video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar > .progessbar-left > div {gwt-image:'progessbarleft'; width:4px; height:10px; line-height:10px; display:block; background-position:left; }
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar > .progessbar-right { width:7px; height:10px; margin-left:-7px; margin-top:0px; margin-right:0px; margin-bottom:0px; padding:0px; float:left;}
+		@sprite .video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar > .progessbar-right > div {gwt-image:'progessbarright'; width:7px; height:10px; line-height:10px; display:block; background-position:right; }
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar > .slider {min-width:11px;_width:11px;height:10px; float: left; margin:0px; padding:0px;display: inline; display:-moz-inline-stack; display:inline-block;zoom: 1; outline:none;cursor: pointer;}
+		.video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar > .slider > div { height:10px; margin: 0px 7px 0px 4px; padding:0px; display:block;}
+		@sprite .video-player-controls > .controls-wrapper > .controls-bar > .wrapper > div > .progessbar-wrapper > div > .progessbar > .slider > div > div {gwt-image:'progessbar'; width:100%; height:10px; line-height:10px; margin:0px; padding:0px; display:block; background-position:left; }
+		
+		.video-player-controls > .controls-wrapper > .controls-bar-right { width:4px; height:27px; margin-left:-4px; margin-top:0px; margin-right:0px; margin-bottom:0px; padding:0px; float:left;}
+		@sprite .video-player-controls > .controls-wrapper > .controls-bar-right > div {gwt-image:'controlsbarright'; width:4px; height:27px; line-height:27px; display:block; background-position:right; }
+		
+		.video-player-controls.state-playing {}
+		.video-player-controls.state-pausing {}
+		.video-player-controls.state-loading {}
+		
+	</ui:style>
+	
+	<g:FlowPanel ui:field="root" styleName="video-player-controls">
+		<g:HTMLPanel styleName="controls-wrapper">
+			<g:HTMLPanel styleName="controls-bar-left"><div></div></g:HTMLPanel>
+			<g:HTMLPanel styleName="controls-bar">
+				<div class="wrapper">
+					<div>
+						<div class="controls">
+							<div class="controls-boutons">
+								<g:Button ui:field="play" styleName="play"></g:Button>
+								<g:Button ui:field="pause" styleName="pause"></g:Button>
+							</div>
+							<g:Label ui:field="duration" styleName="duration" visible="false">--:--</g:Label>
+							<g:Label ui:field="elapse" styleName="elapse">--:--</g:Label>
+						</div>
+						<div class="progessbar-wrapper">
+							<div>
+								<div class="progessbar-bg-left"><div></div></div>
+								<div class="progessbar-bg"><div><div></div></div></div>
+								<div class="progessbar-bg-right"><div></div></div>
+								<div class="progessbar">
+									<div class="progessbar-left"><div></div></div>
+									<g:FocusPanel ui:field="slider" styleName="slider"><g:HTMLPanel><div></div></g:HTMLPanel></g:FocusPanel>
+									<div class="progessbar-right"><div></div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</g:HTMLPanel>
+			<g:HTMLPanel styleName="controls-bar-right"><div></div></g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:FlowPanel>
+</ui:UiBinder> 

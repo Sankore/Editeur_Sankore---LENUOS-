@@ -1,0 +1,19 @@
+.pageList table .cellId {
+	width: 50px;
+	text-align: center;
+}
+.pageList table .cellFilterBOOLEAN {
+	width: 50px;
+	text-align: center;
+}
+.pageList table .cellFilterDATE {
+	width: 100px;
+	text-align: center;
+}
+.pageList table .cellFilterINTEGER {
+	width: 50px;
+	text-align: center;
+}
+.pageList table .cellFilterSTRING {
+	width: 200px;
+}

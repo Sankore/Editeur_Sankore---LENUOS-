@@ -1,0 +1,27 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	ui:generateLocales="default"
+	ui:generateFormat="com.google.gwt.i18n.rebind.format.PropertiesFormat"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:app="urn:import:com.paraschool.htmllist.client" 
+	xmlns:c="urn:import:com.paraschool.editor.modules.commons.client.ui"
+	xmlns:ce="urn:import:com.paraschool.editor.modules.commons.client.ui.edit">
+	
+	<ui:style field="css" type="com.paraschool.editor.modules.commons.client.ui.edit.EditNodes.CssResource">
+	
+		ol.nodes {margin:0;padding:0;list-style:none;}
+		ol.nodes > li {margin: 0 0 20px; clear: both; overflow: hidden; opacity:0;
+			 transition-property: all; transition-duration: 1000ms; transition-timing-function: ease-in-out; transition-delay: initial; 
+			 -webkit-transition-property: all; -webkit-transition-duration: 1000ms; -webkit-transition-timing-function: ease-in-out; -webkit-transition-delay: initial; 
+			 -moz-transition-property: all; -moz-transition-duration: 1000ms; -moz-transition-timing-function: ease-in-out; -moz-transition-delay: initial;
+			 -o-transition-property: all; -o-transition-duration: 1000ms; -o-transition-timing-function: ease-in-out; -o-transition-delay: initial;
+		}
+		
+		.disabled {display:none;}
+	</ui:style>
+	
+	<g:HTMLPanel>
+		<app:HTMLList ui:field="nodes" styleName="{css.nodes}"></app:HTMLList>
+		<ce:CommonsAddNodeButton ui:field="add"/>
+	</g:HTMLPanel>
+</ui:UiBinder> 

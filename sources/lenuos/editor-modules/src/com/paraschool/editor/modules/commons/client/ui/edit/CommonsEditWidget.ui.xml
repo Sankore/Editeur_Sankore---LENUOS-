@@ -1,0 +1,40 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:app="urn:import:com.paraschool.htmllist.client" 
+	xmlns:c="urn:import:com.paraschool.editor.modules.commons.client.ui"
+	xmlns:ce="urn:import:com.paraschool.editor.modules.commons.client.ui.edit">
+	
+	<ui:style>
+		@external hide-statement-button, statement-container, thumbnail, wrapper, medias, statement, media;
+		
+		.interactivity h1 {font-size:3em;font-weight: normal;}
+		.interactivity h2 {font-size:2.5em;font-weight: normal;}
+		.interactivity h3 {font-size:2em;font-weight: normal;}
+		.interactivity h4 {font-size:1.5em;font-weight: normal;}
+		.interactivity h5 {font-size:1em;font-weight: normal;}
+		.interactivity h6 {font-size:0.85em;font-weight: normal;}
+		
+		.interactivity h1, .interactivity h2, .interactivity h3, .interactivity h4, .interactivity h5, .interactivity h6, .interactivity p, .interactivity pre {margin:0;}
+		.interactivity pre {font-family: 'Lucida Grande', 'Lucida Sans Unicode';font-size:1.6em; line-height:1.3em; color:#666; margin-top:0;}
+		.interactivity p {font-size:2em;line-height:normal;}
+		
+		.statementPanel {margin:20px 0px;position:relative;}
+		
+		
+		.hide-statement-button {border:0;padding:0;outline:0px;outline:none;background:none;cursor:pointer;display:block;margin:0 auto; color:#CCC;font-size: 14px;line-height: 40px;text-align: center;}
+		.statementPanel > .statement-container > .thumbnail {float:left;width:70px;margin-right:-80px;position:relative;}
+		.statementPanel > .statement-container > .wrapper {float:left;width:100%;}
+		.statementPanel > .statement-container > .wrapper > .statement {margin:15px 5px 0 80px;} 
+		.statementPanel > .medias {clear: both; padding-top: 20px;}
+		.statementPanel > .medias > div {text-align: center;position: relative;margin-bottom:20px;}
+		.media {max-width: 100%;margin: 0 auto;width:auto;height:auto;} /*width:auto;height:auto; pour ie*/
+	</ui:style>
+	
+	<g:HTMLPanel styleName="{style.interactivity}">
+		<c:StatementPanel ui:field="statementPanel" styleName="{style.statementPanel}"/>
+		<ce:StatementControls ui:field="statementControls"/>
+        <g:FlowPanel ui:field="content"></g:FlowPanel>
+	</g:HTMLPanel>
+	
+</ui:UiBinder> 

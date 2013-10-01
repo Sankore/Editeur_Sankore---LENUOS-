@@ -1,0 +1,6 @@
+#Tue Nov 16 19:31:25 CET 2010
+eclipse.preferences.version=1
+jarsExcludedFromWebInfLib=/usr/local/xuggler/share/java/jars/xuggle-xuggler.jar
+launchConfigExternalUrlPrefix=
+warSrcDir=war
+warSrcDirIsOutput=true

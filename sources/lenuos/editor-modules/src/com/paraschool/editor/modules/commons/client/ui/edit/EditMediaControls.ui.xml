@@ -1,0 +1,21 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	ui:generateFormat="com.google.gwt.i18n.rebind.format.PropertiesFormat">
+	
+	<ui:image field="mediachange" src="images/media-edit.jpg"></ui:image>
+	<ui:image field="mediadelete" src="images/media-delete.jpg"></ui:image>
+	
+	<ui:style>
+		.container{text-align:center;margin:0;margin-bottom:5px;padding:0;}
+		@sprite .change {gwt-image:'mediachange';}
+		@sprite .delete {gwt-image:'mediadelete';}
+		.container button {border:none;margin:0;padding:0;outline:0px;outline:none;cursor:pointer;}
+		.container button:disabled {display:none;}
+	</ui:style>
+	
+	<g:HTMLPanel styleName="{style.container}">
+		<g:Button ui:field="change" styleName="{style.change}" title="Changer cette ressource"><ui:attribute name="title" key="change.title"/></g:Button>
+		<g:Button ui:field="delete" styleName="{style.delete}" title="Supprimer cette ressource"><ui:attribute name="title" key="delete.title"/></g:Button>
+	</g:HTMLPanel>
+</ui:UiBinder> 

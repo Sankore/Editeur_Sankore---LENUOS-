@@ -1,0 +1,17 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:app="urn:import:com.paraschool.editor.client.view">
+
+	<ui:with type="com.paraschool.editor.client.view.ResourceListView.Resources" field="res"></ui:with>
+
+	<g:FlowPanel>
+		<app:ResourceUpload ui:field="uploader"></app:ResourceUpload>
+		<g:Button ui:field="createLinkButton" styleName="{res.css.createLinkButton}">
+			<ui:msg key="resources.link.button.label">Ajouter un lien</ui:msg>
+		</g:Button>
+		<g:Button ui:field="catalogButton" styleName="{res.css.catalogButton} {res.appCss.flotR}">
+			<ui:msg key="resources.catalog.button.label">Catalogue partagé</ui:msg>
+		</g:Button>
+		<g:HTMLPanel styleName="{res.appCss.clear}"></g:HTMLPanel>
+	</g:FlowPanel>
+</ui:UiBinder> 

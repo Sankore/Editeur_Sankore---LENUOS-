@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='modules'>
+	
+	<inherits name='com.google.gwt.user.User' />
+	
+	<!--<inherits name="com.paraschool.modules.ClasspathModulesStore"/>-->
+	<inherits name="com.paraschool.modules.ModulesStore"/>
+	<inherits name="com.paraschool.editor.modules.EditorModules"/>
+	<inherits name="com.paraschool.editor.interactivity.Interactivity"/>
+
+	<!-- Specify the app entry point class. -->
+	<entry-point class='com.paraschool.editor.modules.test.client.EditorModulesTest' />
+
+	<!-- Specify the paths for translatable code -->
+	<source path='client' />
+	<source path='shared' />
+	
+</module>

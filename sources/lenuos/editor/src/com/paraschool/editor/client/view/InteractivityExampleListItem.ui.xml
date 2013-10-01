@@ -1,0 +1,25 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+<ui:with type="com.paraschool.editor.client.view.InteractivityListView.Resources" field="view"></ui:with>
+	<ui:with type="com.paraschool.editor.client.view.InteractivityListItem.Resources" field="res"></ui:with>
+	<ui:with type="com.paraschool.editor.client.view.InteractivityExampleListItem.Resources" field="example"></ui:with>
+
+	<g:FlowPanel styleName="{res.css.item}">
+		<g:HTMLPanel styleName="">
+			<p ui:field="interactivity" class="{example.css.interactivity}"></p>
+			<p ui:field="name" class="{example.css.name}"></p>
+			<p ui:field="description" class="{example.css.description}"></p>
+		</g:HTMLPanel>
+		
+		<g:HTMLPanel styleName="{example.css.thumbnail}">
+			<g:Image ui:field="img"></g:Image>
+		</g:HTMLPanel>
+		
+		<g:HTMLPanel styleName="{view.css.actions}">
+			<g:Button ui:field="chooseButton" styleName="{view.css.button} {view.css.create}"><ui:msg key="add.button.label">Créer une interactivité à partir de cet exemple</ui:msg></g:Button>
+		</g:HTMLPanel>
+	</g:FlowPanel>
+	
+</ui:UiBinder> 

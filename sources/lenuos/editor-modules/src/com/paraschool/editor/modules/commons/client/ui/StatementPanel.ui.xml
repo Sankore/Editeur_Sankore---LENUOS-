@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:c="urn:import:com.paraschool.editor.modules.commons.client.ui">
+	
+	<g:HTMLPanel>
+		<g:Button ui:field="hide" styleName="hide-statement-button" visible="false">(...)</g:Button>
+		<g:HTMLPanel ui:field="statementContainer" styleName="statement-container">
+			<g:HTMLPanel styleName="thumbnail">
+				<c:MediaContainer ui:field="thumbnail"/>
+			</g:HTMLPanel>
+			<g:HTMLPanel styleName="wrapper">
+				<g:HTML ui:field="statement" styleName="statement"/>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+		<g:HTMLPanel styleName="medias">
+			<c:MediaContainer ui:field="sound"/>
+			<c:MediaContainer ui:field="resource"/>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

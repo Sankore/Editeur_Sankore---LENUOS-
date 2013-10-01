@@ -1,0 +1,90 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:app="urn:import:com.paraschool.htmllist.client" 
+	xmlns:c="urn:import:com.paraschool.editor.modules.commons.client.ui"
+	xmlns:ce="urn:import:com.paraschool.editor.modules.commons.client.ui.edit">
+
+	<ui:with type="com.paraschool.editor.modules.commons.client.ui.edit.Resources" field="res"/>
+	<ui:image field="icon" src="images/options-icon.png"></ui:image>
+		
+	<ui:style>
+		
+		.container {}
+		.node {}
+		.wrapper {}
+		 
+		.node > .wrapper > .head {line-height: 35px;margin-bottom:10px;}
+		.node > .wrapper > .head .title{float:left;/*height: 35px;*/}
+		.node > .wrapper > .head .title .number {color: #00c6ff;font-size:40px;margin:0px;padding:0px;}
+		.node > .wrapper > .head .menus{float:right;}
+		.node > .wrapper > .head .menus button{vertical-align:middle;} /* IE en a besoin pour aligner les boutons */
+		.buttons {}
+		.buttons button:disabled {display: none;}
+		
+		.optionsWrapper {margin: 0px; clear: both; overflow: hidden;
+			 transition-property: all; transition-duration: 500ms; transition-timing-function: ease-in-out; transition-delay: initial; 
+			 -webkit-transition-property: all; -webkit-transition-duration: 500ms; -webkit-transition-timing-function: ease-in-out; -webkit-transition-delay: initial; 
+			 -moz-transition-property: all; -moz-transition-duration: 500ms; -moz-transition-timing-function: ease-in-out; -moz-transition-delay: initial;
+			 -o-transition-property: all; -o-transition-duration: 500ms; -o-transition-timing-function: ease-in-out; -o-transition-delay: initial;
+		}
+		
+		.options{background-color: rgb(243, 243, 242); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(236, 236, 235); border-right-color: rgb(236, 236, 235); border-bottom-color: rgb(236, 236, 235); border-left-color: rgb(236, 236, 235); border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; border-bottom-right-radius: 5px 5px; border-bottom-left-radius: 5px 5px; -webkit-box-shadow: rgb(222, 222, 221) 0px 0px 2px inset; padding: 0px;}
+		.options > .head{margin:15px 30px;padding:0px;}
+		@sprite .options > .head > .icon {gwt-image:"icon";float:left;width:56px;margin-right:-60px;}
+		.options > .head > .wrapper {float:left;width:100%;}
+		.options > .head > .wrapper > .title {margin-left:60px;font-size:13px;line-height:normal;color:#cccccc;}
+		.options > .head > .wrapper > .title p {margin:0;padding:0;font-size:13px;line-height:normal;color:#cccccc;}
+		.options > .head > .wrapper > .title > .title {margin-bottom:2px;font-size:18px;}
+		
+		.optionsList {margin:0px 0px 0px 1Opx !important;}
+		.optionsList li{margin-right: 1Opx !important;}
+		
+		.statement {clear: both;}
+		
+		.cells {}
+		.cells ol {}
+		.cells ol > li {}
+		
+		.add {}
+		
+	</ui:style>
+
+	<g:HTMLPanel ui:field="root" styleName="{style.container}">
+		
+		<g:HTMLPanel styleName="{style.node}">
+			<g:HTMLPanel  styleName="{style.wrapper}">
+				<g:HTMLPanel  styleName="{style.head}">
+					<g:HTMLPanel ui:field="title" styleName="{style.title}">
+						<g:InlineLabel ui:field="number" styleName="{style.number}"></g:InlineLabel>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="{style.menus}">
+						<g:HTMLPanel styleName="{style.buttons}">
+							<g:Button ui:field="preferenceButton" enabled="false" visible="false" styleName="{res.css.plus}" title="Afficher les options"><ui:attribute name="title" key="show.options.title"/><ui:msg key="show.options.button">Options</ui:msg></g:Button>
+							<g:Button ui:field="hidePreferenceButton" styleName="{res.css.plusActive}" title="Fermer les options"><ui:attribute name="title" key="hide.options.title"/><ui:msg key="hide.options.button">Fermer</ui:msg></g:Button>
+							<g:Button ui:field="deleteButton" styleName="{res.css.delete}" title="Supprimer cette activité"><ui:attribute name="title" key="delete.title"/><ui:msg key="delete.button">Supprimer</ui:msg></g:Button>
+						</g:HTMLPanel>
+					</g:HTMLPanel>
+					<div style="clear:both;"/>
+				</g:HTMLPanel>
+				<g:HTMLPanel  ui:field="optionsWrapper" styleName="{style.optionsWrapper}">
+					<g:HTMLPanel ui:field="optionsContainer" styleName="{style.options}">
+						<g:HTMLPanel styleName="{style.head}">
+							<div class="{style.icon}"/>
+							<div class="{style.wrapper}">
+								<div class="{style.title}">
+									<p class="{style.title}"><ui:msg key="options.title">Options de la question en cours</ui:msg></p>
+									<p><ui:msg key="options.subtitle">Ces options vous permettent de modifier le comportement de la question en cours d’édition. Les configurations que vous choisissez seront visibles lors de la prévisualisation ou	l’exportation de votre projet.</ui:msg></p>
+								</div>
+							</div>
+							<div style="clear:both;"/>
+						</g:HTMLPanel>
+						<ce:CommonsOptionsWidget ui:field="options" styleName="{style.optionsList}"></ce:CommonsOptionsWidget>
+					</g:HTMLPanel>
+				</g:HTMLPanel>
+				<g:FlowPanel ui:field="content"/>
+
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

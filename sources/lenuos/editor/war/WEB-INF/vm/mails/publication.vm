@@ -1,0 +1,7 @@
+#set( $subject = "Un projet a été publié" )
+<html>
+<body>
+Le projet $project.details.name a été publié.<br/>
+La publication est accessible à cette adresse <a href="$url">$url</a>
+</body>
+</html>

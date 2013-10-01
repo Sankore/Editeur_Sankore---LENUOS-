@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample>
+	<details>
+		<id>categorize_2</id>
+		<module>categorize</module>
+		<name>Légender des images</name>
+		<description></description>
+		<thumbnail>thumbnail.png</thumbnail>
+		<locale>fr</locale>		
+	</details>
+	<package>categorize_2_fr.zip</package>
+	<content>{&quot;statement&quot;:{&quot;statement&quot;:&quot;&lt;h3&gt;Placez chaque étiquette en dessous de l&apos;image correspondante.&lt;/h3&gt;&quot;, &quot;thumbnail&quot;:null, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;options&quot;:[{&quot;name&quot;:&quot;hide&quot;, &quot;value&quot;:&quot;hide&quot;},{&quot;name&quot;:&quot;switchStatement&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;sequence&quot;, &quot;value&quot;:null}], &quot;nodes&quot;:[{&quot;content&quot;:{&quot;statement&quot;:{&quot;statement&quot;:&quot;&quot;, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;blocs&quot;:[{&quot;resource&quot;:&quot;PSEditor-4598755013673762024.png&quot;, &quot;text&quot;:&quot;&quot;},{&quot;resource&quot;:&quot;PSEditor-8679813374332380977.png&quot;, &quot;text&quot;:&quot;&quot;},{&quot;resource&quot;:&quot;PSEditor-1431900956801807946.png&quot;, &quot;text&quot;:&quot;&quot;},{&quot;resource&quot;:&quot;PSEditor-1247482987227060398.png&quot;, &quot;text&quot;:&quot;&quot;}], &quot;cells&quot;:[{&quot;text&quot;:&quot;&lt;h3&gt;J&apos;accroche&lt;/h3&gt;&quot;},{&quot;text&quot;:&quot;&lt;h3&gt;Je découpe&lt;/h3&gt;&quot;},{&quot;text&quot;:&quot;&lt;h3&gt;Je dessine&lt;/h3&gt;&quot;},{&quot;text&quot;:&quot;&lt;h3&gt;Je colorie&lt;/h3&gt;&quot;}]}, &quot;options&quot;:[{&quot;name&quot;:&quot;random&quot;, &quot;value&quot;:&quot;random&quot;},{&quot;name&quot;:&quot;cellSequence&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;resourceAlignement&quot;, &quot;value&quot;:&quot;BOTTOM&quot;}]}]}</content>
+  <resources>
+    <entry>
+      <string>PSEditor-1431900956801807946.png</string>
+      <picture id="PSEditor-1431900956801807946.png" url="resources/PSEditor-1431900956801807946.png" mimetype="image/png" size="25054" locale="">
+        <name>vign_fatou_ecole_03_decoupe.png</name>
+      </picture>
+    </entry>
+    <entry>
+      <string>PSEditor-8679813374332380977.png</string>
+      <picture id="PSEditor-8679813374332380977.png" url="resources/PSEditor-8679813374332380977.png" mimetype="image/png" size="24176"  locale="">
+        <name>vign_fatou_ecole_02_colorie.png</name>
+      </picture>
+    </entry>
+    <entry>
+      <string>PSEditor-1247482987227060398.png</string>
+      <picture id="PSEditor-1247482987227060398.png" url="resources/PSEditor-1247482987227060398.png" mimetype="image/png" size="21597" locale="">
+        <name>vign_fatou_ecole_05_colle_mur.png</name>
+      </picture>
+    </entry>
+    <entry>
+      <string>PSEditor-4598755013673762024.png</string>
+      <picture id="PSEditor-4598755013673762024.png" url="resources/PSEditor-4598755013673762024.png" mimetype="image/png" size="20620" locale="">
+        <name>vign_fatou_ecole_01_dessine.png</name>
+      </picture>
+    </entry>
+  </resources>	
+</sample>

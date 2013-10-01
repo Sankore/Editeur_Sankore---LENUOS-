@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.1.1//EN" 
+	"http://google-web-toolkit.googlecode.com/svn/tags/2.1.1/distro-source/core/src/gwt-module.dtd">
+
+<module rename-to='editor_modules'>	
+	<inherits name='com.paraschool.editor.modules.choisir.Choisir'/>
+	<inherits name='com.paraschool.editor.modules.selectionner.Selectionner'/>
+	<inherits name='com.paraschool.editor.modules.etudier.Etudier'/>
+	<inherits name='com.paraschool.editor.modules.associer.Associer'/>
+	<inherits name='com.paraschool.editor.modules.categoriser.Categoriser'/>
+	<inherits name='com.paraschool.editor.modules.ordonnerimg.Ordonner'/>
+	<inherits name='com.paraschool.editor.modules.ordonner.mot.Ordonner'/>
+	<inherits name='com.paraschool.editor.modules.ordonner.lettre.Ordonner'/>
+	<inherits name='com.paraschool.editor.modules.ordonner.phrase.Ordonner'/>
+	<inherits name='com.paraschool.editor.modules.relier.Relier'/>
+	<inherits name='com.paraschool.editor.modules.segmenter.mot.Segmenter'/>
+	<inherits name='com.paraschool.editor.modules.segmenter.lettre.Segmenter'/>
+	<inherits name='com.paraschool.editor.modules.segmenter.phrase.Segmenter'/>
+	<source path='client' />
+</module>

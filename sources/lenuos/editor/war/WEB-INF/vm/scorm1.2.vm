@@ -1,0 +1,144 @@
+<?xml version="1.0" standalone="no" ?>
+#set ($project = $projects.get(0))
+<manifest identifier="$project.details.id" version="1.2"
+	xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" 
+	xmlns:lom="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+	xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd 
+						http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd 
+						http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+
+	<metadata>
+		<schema>ADL SCORM</schema>
+		<schemaversion>1.2</schemaversion>
+	</metadata>
+	<!--<author href="$project.details.author.href" email="$project.details.author.email">$project.details.author.name 
+		@ $project.details.author.company</author> -->
+
+	<organizations default="SCO-001">
+		<organization identifier="SCO-001" structure="hierarchical">
+			<title>$project.details.name</title>
+
+			<item identifier="SCO-001" identifierref="SCO-001" isvisible="true">
+				<title>$project.details.name</title>
+
+				<metadata>
+					<lom:lom>
+						<lom:general>
+							<lom:catalogentry>
+								<lom:catalog></lom:catalog>
+								<lom:entry>
+									<lom:langstring xml:lang="fr"><![CDATA[0001]]></lom:langstring>
+								</lom:entry>
+							</lom:catalogentry>
+							<lom:title>
+								<lom:langstring xml:lang="fr">$project.details.name</lom:langstring>
+							</lom:title>
+							<lom:description>
+								<lom:langstring xml:lang="fr">$project.details.description</lom:langstring>
+							</lom:description>
+							<lom:keyword>
+								<lom:langstring xml:lang="fr">$project.details.keywords</lom:langstring>
+							</lom:keyword>
+							<lom:structure>
+								<lom:source>
+									<lom:langstring xml:lang="x-none">LOMv1.0</lom:langstring>
+								</lom:source>
+								<lom:value>
+									<lom:langstring xml:lang="x-none">Collection</lom:langstring>
+								</lom:value>
+							</lom:structure>
+							<lom:aggregationlevel>
+								<lom:source>
+									<lom:langstring xml:lang="x-none">LOMv1.0</lom:langstring>
+								</lom:source>
+								<lom:value>
+									<lom:langstring xml:lang="x-none">1</lom:langstring>
+								</lom:value>
+							</lom:aggregationlevel>
+						</lom:general>
+						<lom:lifecycle>
+							<lom:version>
+								<lom:langstring xml:lang="fr"><![CDATA[260r008]]></lom:langstring>
+							</lom:version>
+							<lom:status>
+								<lom:source>
+									<lom:langstring xml:lang="x-none">LOMv1.0</lom:langstring>
+								</lom:source>
+								<lom:value>
+									<lom:langstring xml:lang="x-none">Final</lom:langstring>
+								</lom:value>
+							</lom:status>
+							<lom:contribute>
+								<lom:role>
+									<lom:source>
+										<lom:langstring xml:lang="x-none">LOMv1.0</lom:langstring>
+									</lom:source>
+									<lom:value>
+										<lom:langstring xml:lang="x-none">Content Provider</lom:langstring>
+									</lom:value>
+								</lom:role>
+							</lom:contribute>
+						</lom:lifecycle>
+						<lom:metametadata>
+							<lom:identifier>
+						      <lom:catalog>$project.details.author.company</lom:catalog>
+						      <lom:entry>$project.details.author.href</lom:entry>
+						    </lom:identifier>
+						    <lom:contribute>
+						      <lom:role>
+						        <lom:source>LOM-1.0</lom:source>
+						        <lom:value>creator</lom:value>
+						      </lom:role>
+						      <lom:entity>BEGIN:vCard
+									N:$project.details.author.name
+									FN:$project.details.author.name, 
+									EMAIL;TYPE=INTERNET:$project.details.author.email
+									END:vCard
+								</lom:entity>
+						      <lom:date>
+						        <lom:dateTime>$project.details.date</lom:dateTime>
+						      </lom:date>
+						    </lom:contribute>
+							<lom:metadatascheme>LOM-1.0</lom:metadatascheme>
+						</lom:metametadata>
+					</lom:lom>
+				</metadata>
+			</item>
+		</organization>
+	</organizations>
+
+	<resources>
+		<!-- A launchable content object (with an href). -->
+		<resource identifier="SCO-001" type="webcontent" adlcp:scormType="sco" href="$entries.get("")">
+			<lom:lom>
+				<lom:general>
+					<lom:title>
+						<lom:string>$project.details.name</lom:string>
+					</lom:title>
+					<lom:language>fr</lom:language>
+					<lom:description>
+						<lom:string>$project.details.description</lom:string>
+					</lom:description>
+					<lom:keyword>
+						<lom:string language="en">$project.details.keywords</lom:string>
+					</lom:keyword>
+					<lom:structure>
+						<lom:source>LOMv1.0</lom:source>
+						<lom:value>hierarchical</lom:value>
+					</lom:structure>
+				</lom:general>
+			</lom:lom>
+
+			<file href="$entries.get("")" />
+			<dependency identifierref="RES-001" />
+		</resource>
+		<!-- A collection of dependency files (no href). -->
+		<resource identifier="RES-001" type="webcontent" adlcp:scormType="asset">
+		#foreach($resource in $project.resources)
+			<file href="$resource.url"></file>
+		#end
+		</resource>
+	</resources>
+</manifest>

@@ -1,0 +1,30 @@
+input#fileData {
+	opacity: 0;
+	filter:alpha(opacity=0); 
+	position: relative;
+	text-align: right;
+	z-index: 2;
+	top: 5px;
+}
+
+div.fileInput {
+	height: 36px;
+	position: relative;
+}
+
+div.fileSimulator {
+	left: 0;
+	line-height: 90%;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	top: 0;
+	width: 350px;
+	z-index: 1;
+}
+div.fileSimulator .fileText {
+	width: 65% !important;
+}
+div.fileSimulator .fileButton {
+	float: none;
+}

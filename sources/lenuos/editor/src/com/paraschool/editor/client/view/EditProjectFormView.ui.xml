@@ -1,0 +1,132 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:h="urn:import:com.paraschool.htmllist.client">
+	
+	<ui:image field="mediachange" src="images/media-edit.jpg"></ui:image>
+	<ui:image field="mediadelete" src="images/media-delete.jpg"></ui:image>
+	
+	<ui:with type="com.paraschool.editor.client.view.EditProjectFormView.Resource" field="res"></ui:with>
+	
+	<ui:style field="css" type="com.paraschool.editor.client.view.EditProjectFormView.CssResource">
+		.root {padding: 5px 20px 20px;min-height: 470px;}
+		.root p {margin:0 0 15px;}
+		.root label {font-size: 0.9em;color:#999;}
+		.root input, .root textarea {width: 100%; border: none;font-size: 1.4em;line-height: 1.6em;}
+		.root textarea {height: 130px;}
+		.root input:hover, .root textarea:hover {outline: 1px solid #F5F5F5;}
+		.root input.empty, .root textarea.empty {border: 1px solid red;}
+		
+		.name {font-size: 2.4em !important;}
+		
+		.wrapper {float:left;width:100%;}
+		.wrapper > div {margin-left: 240px;padding-top: 15px;}
+		.wrapper > div > p.description {margin-bottom:0;}
+		
+		.left {float:left;margin-left: -100%;width: 220px;padding:0 5px;}
+		.icon-controls {text-align:center;margin:0;padding:0;}
+		.left form {margin-top: 5px;}
+		@sprite .icon-controls .change {gwt-image:'mediachange';}
+		@sprite .icon-controls .delete {gwt-image:'mediadelete';}
+		.icon-controls button {border:none;margin:0;padding:0;outline:0px;outline:none;cursor:pointer;}
+		.icon {margin:5px auto;display: block; max-width: 100%;}
+		
+		.author {padding-bottom:10px;}
+		.author > p {margin:0 0 1px;} /* 1px à cause du outline de 1px sur les input*/
+		.author > p > input, .localeWrapper {font-size: 1em !important;color:#999;}
+		
+		.id {color: #999;}
+		
+		.buttons {}
+		.cancel {float:left;}
+		.submit {float:right;}
+		
+		.localeWrapper {margin:20px 0;}
+		.localeinfo {}
+		.projectlocales {display: inline; list-style: none;margin:0;padding:0;}
+		.projectlocales li {display: inline;margin-left:10px;}
+		.projectlocales li button {color: #999;border:none;background:none;margin:0;padding:0;outline:0px;outline:none;cursor:pointer;}
+		.projectlocales li:hover button {color: #000;}
+		.projectlocales li button.locale {text-decoration: underline;}
+		@sprite .projectlocales li button.remove {gwt-image:'mediadelete';text-indent: -9999px;margin-left:5px;visibility: hidden;}
+		.projectlocales li:hover button.remove {visibility: visible;}
+		
+		.localebutton {}
+		
+		.defaultaccess {cursor: pointer;}
+		.defaultaccess:hover {color: #000;text-decoration: underline;}
+		 
+		.external {margin-top:20px;}
+		.external a {text-decoration: none; color: #999; font-size: 1em;}
+		.external a:hover {color: #000;text-decoration: underline;}
+	</ui:style>
+	
+	<g:HTMLPanel styleName="{css.root}">
+		<div>
+			<div class="{css.wrapper}">
+				<div>
+					<p><g:TextBox name="project_name" ui:field="nameBox" styleName="{css.name}" title="Nom du projet"><ui:attribute key="project.form.name.label" name="title"/> </g:TextBox></p>
+					<label class=""><ui:msg key="project.form.objectif.label">Objectif pédagogique</ui:msg></label>
+					<p><g:TextBox styleName="{css.empty}" name="project_objectif" ui:field="objectifBox" title="Objectif pédagogique"><ui:attribute key="project.form.objectif.label" name="title"/> </g:TextBox></p>
+					<label class=""><ui:msg key="project.form.description.label">Description du projet</ui:msg></label>
+					<p class="{css.description}"><g:TextArea styleName="{css.empty}" name="project_description" ui:field="descriptionBox" title="Description du projet"><ui:attribute key="project.form.description.label" name="title"/></g:TextArea></p>	
+				</div>
+			</div>
+			<div class="{css.left}">
+				<g:HTMLPanel styleName="{css.icon-controls}">
+					<g:Button ui:field="change" styleName="{css.change}" title="Changer l'icône du projet"><ui:attribute name="title" key="project.form.change.title"/></g:Button>
+					<g:Button ui:field="delete" styleName="{css.delete}" title="Supprimer l'icône du projet"><ui:attribute name="title" key="project.form.delete.title"/></g:Button>
+				</g:HTMLPanel>
+				<g:FormPanel ui:field="form" action="iupload" method="post" encoding="multipart/form-data" visible="false">
+					<g:HTMLPanel>
+						<g:FileUpload ui:field="file" name="file"/>
+						<g:Hidden ui:field="id" name="project"/>
+						<g:Hidden ui:field="path" name="path"/>
+					</g:HTMLPanel>
+				</g:FormPanel>
+				<g:HTMLPanel>
+					<g:Image ui:field="icon" styleName="{css.icon}" url="{res.blankPage.getURL}"></g:Image>
+				</g:HTMLPanel>
+			</div>
+		</div>
+		<g:HTMLPanel styleName="{css.author}">
+			<!--<label class=""><ui:msg key="project.form.author.label">L'auteur</ui:msg></label>-->
+			<p><g:TextBox name="author_name" ui:field="authorNameBox" title="Nom de l'auteur"><ui:attribute key="project.form.author.label" name="title"/></g:TextBox></p>
+			<p><g:TextBox name="author_email" ui:field="authorEmailBox" title="Email de l'auteur"><ui:attribute key="project.form.author.email.label" name="title"/></g:TextBox></p>
+			<p><g:TextBox name="author_company" ui:field="authorCompanyBox" title="Compagnie de l'auteur"><ui:attribute key="project.form.author.company.label" name="title"/></g:TextBox></p>
+			<p><g:TextBox name="author_url" ui:field="authorUrlBox" title="Site de l'auteur"><ui:attribute key="project.form.author.href.label" name="title"/></g:TextBox></p>
+			<p><g:TextBox name="project_version" ui:field="versionBox" title="Version du projet"><ui:attribute key="project.form.version.label" name="title"/></g:TextBox></p>
+			<g:Label ui:field="idLabel" styleName="{css.id}"></g:Label>
+		</g:HTMLPanel>
+		<div class="{css.buttons}">
+			<g:Button styleName="{res.appCss.button} {css.cancel}" ui:field="backButton" visible="false"><ui:msg key="button.cancel">Annuler</ui:msg></g:Button>
+			<g:Button styleName="{res.appCss.button} {css.submit}" ui:field="submitButton"><ui:msg key="button.validate">Valider</ui:msg></g:Button>
+			<div style="clear:both;"></div>
+		</div>
+		<g:HTMLPanel visible="false" styleName="{css.localeWrapper}">
+			<g:HTMLPanel ui:field="projectLocalesWrapper">
+				<g:InlineLabel ui:field="localeInfo" styleName="{css.localeinfo}"></g:InlineLabel>
+				<h:HTMLList ui:field="projectLocales" styleName="{css.projectlocales}"></h:HTMLList>
+				<g:Button ui:field="changeLocaleButton" visible="false"/>
+				<g:Button ui:field="deleteLocaleButton" visible="false"/>
+			</g:HTMLPanel>
+			
+			<g:HTMLPanel ui:field="availableLocales" visible="false">
+				<g:InlineLabel><ui:msg key="add.locale.label">Vous pouvez créer une nouvelle version pour la langue suivante :</ui:msg> </g:InlineLabel>
+				<g:ListBox ui:field="locales"></g:ListBox>
+				<g:Button ui:field="newLocaleButton" styleName="{css.localebutton}" title="Ajouter une traduction"><ui:attribute name="title" key="add.locale.button.title"/><ui:msg key="add.locale.button.label">Créer</ui:msg></g:Button>			
+			</g:HTMLPanel>
+			
+			<g:InlineLabel ui:field="defaultProjectAccess" styleName="{css.defaultaccess}"><ui:msg key="show.default.project.label">Cliquez ici pour revenir au projet d'origine</ui:msg></g:InlineLabel>
+		</g:HTMLPanel>
+		<div class="{css.external}">
+			<g:Anchor ui:field="gipAnchor" href="gip.html#" target="_blank" visible="false">Tester l'édition restreinte</g:Anchor>
+			<g:HTMLPanel>
+				<g:Anchor ui:field="export" href="#" target="_blank"><ui:msg key="export.label">Si vous le souhaitez, vous pouvez obtenir un export pour chaque page du projet.</ui:msg></g:Anchor>
+			</g:HTMLPanel>
+			<g:HTMLPanel>
+				<g:Anchor ui:field="clean" href="#" target="_blank"><ui:msg key="clean.label">Les données d'exportation consomme beaucoup d'espace sur le serveur. Nettoyer régulièrement vos projets.</ui:msg></g:Anchor>
+			</g:HTMLPanel>
+			
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

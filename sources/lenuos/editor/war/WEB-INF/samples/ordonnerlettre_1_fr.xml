@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample>
+	<details>
+		<id>ordonnerlettre_1</id>
+		<module>ordonnerlettre</module>
+		<name>Ordonner des lettres</name>
+		<description></description>
+		<thumbnail>thumbnail.png</thumbnail>
+		<locale>fr</locale>		
+	</details>
+	<package>ordonnerlettre_1_fr.zip</package>
+	<content>{&quot;statement&quot;:{&quot;statement&quot;:&quot;&lt;h3&gt;Ecoutez le son et placez les lettres dans l&apos;ordre.&lt;/h3&gt;&quot;, &quot;thumbnail&quot;:null, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;options&quot;:[{&quot;name&quot;:&quot;hide&quot;, &quot;value&quot;:&quot;hide&quot;},{&quot;name&quot;:&quot;switchStatement&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;sequence&quot;, &quot;value&quot;:null}], &quot;nodes&quot;:[{&quot;content&quot;:{&quot;statement&quot;:{&quot;statement&quot;:&quot;&quot;, &quot;sound&quot;:&quot;PSEditor-8418589730837066165.mp3&quot;, &quot;resource&quot;:null}, &quot;source&quot;:&quot;P*i*a*n*o&quot;}, &quot;options&quot;:[{&quot;name&quot;:&quot;random&quot;, &quot;value&quot;:&quot;random&quot;}]}]}</content>
+  <resources>
+    <entry>
+      <string>PSEditor-8418589730837066165.mp3</string>
+      <audio id="PSEditor-8418589730837066165.mp3" url="resources/PSEditor-8418589730837066165.mp3" mimetype="audio/mpeg" size="13818" locale="">
+        <name>piano.mp3</name>
+        <info duration="-9223372036854" codec="CODEC_ID_MP3" format="FMT_S16"/>
+      </audio>
+    </entry>
+  </resources>	
+</sample>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+
+	<jsp:directive.attribute name="back" required="false" />
+
+	<div class="buttonBar">
+		<jsp:doBody />
+		<c:if test="${not empty back}">
+			<spring:message code="button.back" var="submitBack"/>
+			<input type="submit" value="${submitBack}" class="button retour right" onClick="window.location='${pageContext.request.contextPath}${back}';return false;"/>
+		</c:if>
+	</div>
+
+</jsp:root>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample>
+	<details>
+		<id>ordonnerphrase_1</id>
+		<module>ordonnerphrase</module>
+		<name>Ordonner des phrases</name>
+		<description></description>
+		<thumbnail>thumbnail.png</thumbnail>
+		<locale>fr</locale>		
+	</details>
+	<package>ordonnerphrase_1_fr.zip</package>
+	<content>{&quot;statement&quot;:{&quot;statement&quot;:&quot;&lt;h3&gt;Placez les phrases dans l&apos;ordre.&lt;/h3&gt;&quot;, &quot;thumbnail&quot;:null, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;options&quot;:[{&quot;name&quot;:&quot;hide&quot;, &quot;value&quot;:&quot;hide&quot;},{&quot;name&quot;:&quot;switchStatement&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;sequence&quot;, &quot;value&quot;:null}], &quot;nodes&quot;:[{&quot;content&quot;:{&quot;statement&quot;:{&quot;statement&quot;:&quot;&quot;, &quot;sound&quot;:null, &quot;resource&quot;:&quot;PSEditor-5715117556216751203.png&quot;}, &quot;source&quot;:&quot;Ensuite, je découpe mon dessin. D&apos;abord, je dessine et je colorie.&quot;}, &quot;options&quot;:[{&quot;name&quot;:&quot;random&quot;, &quot;value&quot;:&quot;random&quot;}]}]}</content>
+  <resources>
+    <entry>
+      <string>PSEditor-5715117556216751203.png</string>
+      <picture id="PSEditor-5715117556216751203.png" url="resources/PSEditor-5715117556216751203.png" mimetype="image/png" size="25054" thumbnail="resources/thumbnails/vign_fatou_ecole_03_decoupe.png" locale="">
+        <name>vign_fatou_ecole_03_decoupe.png</name>
+      </picture>
+    </entry>
+  </resources>	
+</sample>

@@ -1,0 +1,35 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<ui:with type="com.paraschool.editor.client.view.ListProjectView.Resources" field="res"></ui:with>
+
+	<g:FlowPanel styleName="{res.css.boxRoot}">
+		<g:HTMLPanel ui:field="boxPanel" styleName="{res.css.box}">
+            <div class="{res.css.boxWrapper}">
+            	<div class="{res.css.left} {res.appCss.flotL}">
+	                <div>
+	                	<p class="{res.css.name}"><g:InlineLabel ui:field="name"></g:InlineLabel></p>
+	                	<p class="{res.css.date}"><g:InlineLabel ui:field="date"></g:InlineLabel></p>
+	                </div>
+	            </div>
+	            <g:HTMLPanel styleName="{res.css.right} {res.appCss.flotL}">
+	                <g:Button styleName="{res.css.open}"  ui:field="open"><ui:msg key="list.project.open.button">Ouvrir</ui:msg></g:Button>
+	                <g:Button styleName="{res.css.detail}"  ui:field="detail"><ui:msg key="list.project.detail.button">Détails</ui:msg></g:Button>
+	            </g:HTMLPanel>
+	            <div class="{res.appCss.clear}"></div>
+            </div>
+        </g:HTMLPanel>
+        <g:HTMLPanel ui:field="descriptionPanel" styleName="{res.css.description}" visible="false">
+            <div class="{res.css.head}">
+            	<g:Label ui:field="objectif" styleName="{res.css.objectif}"></g:Label>
+            	<g:Label ui:field="description" styleName="{res.css.details}"></g:Label>
+            </div>
+            <div class="{res.css.bottom}"></div>
+        </g:HTMLPanel>
+        <g:HTMLPanel styleName="{res.appCss.clear}"></g:HTMLPanel>
+        <g:HTMLPanel styleName="{res.css.delete}">
+       		<g:Button ui:field="delete"></g:Button>
+       	</g:HTMLPanel>
+	</g:FlowPanel>
+</ui:UiBinder> 

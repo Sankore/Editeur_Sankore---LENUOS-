@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.google.gdt.eclipse.suite.webapp">
+<stringAttribute key="com.google.gdt.eclipse.suiteMainTypeProcessor.PREVIOUSLY_SET_MAIN_TYPE_NAME" value="com.google.gwt.dev.DevMode"/>
+<booleanAttribute key="com.google.gdt.eclipse.suiteWarArgumentProcessor.IS_WAR_FROM_PROJECT_PROPERTIES" value="true"/>
+<listAttribute key="com.google.gwt.eclipse.core.ENTRY_POINT_MODULES">
+<listEntry value="com.paraschool.editor.gip.Gip"/>
+<listEntry value="com.paraschool.viewer.Viewer"/>
+<listEntry value="com.paraschool.modules.ClasspathModulesStore"/>
+<listEntry value="com.paraschool.htmllist.HTMLList"/>
+<listEntry value="com.paraschool.editor.interactivity.Interactivity"/>
+<listEntry value="com.paraschool.editor.EditorCore"/>
+<listEntry value="com.paraschool.editor.Editor"/>
+<listEntry value="com.paraschool.commons.Commons"/>
+</listAttribute>
+<stringAttribute key="com.google.gwt.eclipse.core.URL" value="gip.html"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/editor"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<mapAttribute key="org.eclipse.debug.core.environmentVariables">
+<mapEntry key="editor.loglevel" value="WARN"/>
+<mapEntry key="editor.logs" value="tmp/"/>
+</mapAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="com.google.gwt.eclipse.core.moduleClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.google.gwt.dev.DevMode"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-remoteUI &quot;${gwt_remote_ui_server_port}:${unique_id}&quot; -startupUrl gip.html -logLevel INFO -codeServerPort 9997 -port 8888 -war /Users/bathily/Developpement/sankore-lenuos/editor/war com.paraschool.commons.Commons com.paraschool.editor.Editor com.paraschool.editor.EditorCore com.paraschool.editor.interactivity.Interactivity com.paraschool.htmllist.HTMLList com.paraschool.modules.ClasspathModulesStore com.paraschool.viewer.Viewer com.paraschool.editor.gip.Gip"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="editor"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx512m -XstartOnFirstThread -Deditor.logs=/tmp/"/>
+</launchConfiguration>

@@ -1,0 +1,15 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:app="urn:import:com.paraschool.htmllist.client" 
+	xmlns:c="urn:import:com.paraschool.editor.modules.commons.client.ui">
+	
+	<g:HTMLPanel>
+		<app:HTMLList ui:field="nodes" styleName="nodes"></app:HTMLList>
+		<g:HTMLPanel ui:field="navigation" styleName="node-navigation">
+			<g:Button ui:field="previous" styleName="prev" title="Précédente"><ui:attribute name="title" key="prev.button.title"></ui:attribute><ui:msg key="prev.button">Précédente</ui:msg></g:Button>
+			<g:Button ui:field="next" styleName="next" title="Suivante"><ui:attribute name="title" key="next.button.title"></ui:attribute><ui:msg key="next.button">Suivante</ui:msg></g:Button> 
+        </g:HTMLPanel>
+	</g:HTMLPanel>
+	
+</ui:UiBinder> 

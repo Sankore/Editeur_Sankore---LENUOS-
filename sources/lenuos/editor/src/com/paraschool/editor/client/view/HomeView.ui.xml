@@ -1,0 +1,51 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:app="urn:import:com.paraschool.editor.client.view"
+	xmlns:h="urn:import:com.paraschool.htmllist.client">
+   
+   <ui:with type="com.paraschool.editor.client.view.HomeView.Resources" field="res"></ui:with>
+   
+	<g:HTMLPanel ui:field="root">
+       	<div class="{res.css.arrowPratique}"></div>
+        <div class="{res.css.menu}">
+	    	<g:HTMLPanel styleName="{res.css.container}">
+	            <g:Button styleName="{res.css.create}" ui:field="createProjectButton">
+	            	<div class="{res.css.content}">
+	            		<p class="{res.css.title}"><ui:msg key="create.project.button.title">Créer un projet</ui:msg></p>
+	                	<p class="{res.css.subtitle}"><ui:msg key="create.project.button.description">Cliquez sur ce bouton pour démarrer la création d’un nouveau projet. Attention, il n’est pas possible de travailler sur plusieurs projets en même temps.</ui:msg></p>
+	            	</div>
+	            </g:Button>
+	        	<div class="{res.css.raccourci}"><p ui:field="newProjectKeystroke">ctrl+n</p></div>    
+	        </g:HTMLPanel>
+	        
+	        <g:HTMLPanel styleName="{res.css.container}">
+	            <g:Button styleName="{res.css.open}" ui:field="openProjectButton">
+	            	<div class="{res.css.content}">
+	            		<p class="{res.css.title}"><ui:msg key="open.project.button.title">Ouvrir un projet</ui:msg></p>
+	                	<p class="{res.css.subtitle}"><ui:msg key="open.project.button.description">Cliquez sur ce bouton pour reprendre l’édition d’un projet existant. N’oubliez pas d’enregistrer régulièrement pour retrouver votre travail le plus récent.</ui:msg></p>
+	            	</div>
+	            </g:Button>
+	        	<div class="{res.css.raccourci}"><p ui:field="openProjectKeystroke">ctrl+o</p></div>    
+	        </g:HTMLPanel>
+	        
+	        <g:HTMLPanel styleName="{res.css.container}">
+	        	<div class="{res.css.recent}" >
+	        		<div class="{res.css.content}">
+		                <p class="{res.css.title}"><ui:msg key="recent.project.button.title">Projets récents</ui:msg></p>
+		                <g:FlowPanel>
+		                	<h:HTMLList ui:field="recentProjectsList"  styleName="{res.css.list}"/>
+		                </g:FlowPanel>
+		            </div>
+	        	</div>
+	        </g:HTMLPanel>
+	        
+	        <div class="{res.appCss.clear}"></div>
+	        
+	        
+	        <div class="{res.css.arrowEfficace}"></div>
+	        
+	    </div>
+	</g:HTMLPanel>
+	
+</ui:UiBinder> 

@@ -1,0 +1,8 @@
+.container{width:30px;height:auto;background-color:#575655;right:0;}
+@sprite .head{gwt-image:'head';width:30px;height:6px;background-position:top left;}
+@sprite .content{gwt-image:'content';width:30px;height:auto;background-position:top left;}
+.content .buttons{width:30px;height:auto;list-style:none;margin:0 auto;padding: 0;}
+.content .buttons li{display:block;width:30px;height:30px;margin:0px auto 10px;}
+.content .buttons li button {margin:0;padding:0;border:none;background:none;cursor:pointer;font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;}
+.content .buttons li.last{margin-bottom: 0px;}
+@sprite .bottom{gwt-image:'bottom';width:30px;height:6px;background-position:bottom left;}

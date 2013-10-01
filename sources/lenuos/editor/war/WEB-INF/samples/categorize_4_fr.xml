@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample>
+	<details>
+		<id>categorize_4</id>
+		<module>categorize</module>
+		<name>Catégoriser des images</name>
+		<description></description>
+		<thumbnail>thumbnail.png</thumbnail>
+		<locale>fr</locale>
+	</details>
+	<package>categorize_4_fr.zip</package>
+	<content>{&quot;statement&quot;:{&quot;statement&quot;:&quot;&lt;h3&gt;Placez les images dans les catégories qui correspondent.&lt;/h3&gt;&quot;, &quot;thumbnail&quot;:null, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;options&quot;:[{&quot;name&quot;:&quot;hide&quot;, &quot;value&quot;:&quot;hide&quot;},{&quot;name&quot;:&quot;switchStatement&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;sequence&quot;, &quot;value&quot;:null}], &quot;nodes&quot;:[{&quot;content&quot;:{&quot;statement&quot;:{&quot;statement&quot;:&quot;&quot;, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;blocs&quot;:[{&quot;text&quot;:&quot;&lt;h1&gt;Légumes&lt;/h1&gt;&quot;},{&quot;text&quot;:&quot;&lt;h1&gt;Fruits&lt;/h1&gt;&quot;}], &quot;cells&quot;:[{&quot;resource&quot;:&quot;PSEditor-576027928128947217.png&quot;, &quot;text&quot;:&quot;&quot;},{&quot;resource&quot;:&quot;PSEditor-3706244360012988514.png&quot;, &quot;text&quot;:&quot;&quot;},{&quot;resource&quot;:&quot;PSEditor-4306650185623045083.png&quot;, &quot;text&quot;:&quot;&quot;},{&quot;resource&quot;:&quot;PSEditor-3787076070688169659.png&quot;, &quot;text&quot;:&quot;&quot;}]}, &quot;options&quot;:[{&quot;name&quot;:&quot;random&quot;, &quot;value&quot;:&quot;random&quot;},{&quot;name&quot;:&quot;cellSequence&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;resourceAlignement&quot;, &quot;value&quot;:&quot;BOTTOM&quot;}]}]}</content>
+	<resources>
+	    <entry>
+	      <string>PSEditor-4306650185623045083.png</string>
+	      <picture id="PSEditor-4306650185623045083.png" url="resources/PSEditor-4306650185623045083.png" mimetype="image/png" size="10339"  locale="">
+	        <name>objet_carotte.png</name>
+	      </picture>
+	    </entry>
+	    <entry>
+	      <string>PSEditor-3706244360012988514.png</string>
+	      <picture id="PSEditor-3706244360012988514.png" url="resources/PSEditor-3706244360012988514.png" mimetype="image/png" size="53871"  locale="">
+	        <name>objet_fraises.png</name>
+	      </picture>
+	    </entry>
+	    <entry>
+	      <string>PSEditor-576027928128947217.png</string>
+	      <picture id="PSEditor-576027928128947217.png" url="resources/PSEditor-576027928128947217.png" mimetype="image/png" size="7914"  locale="">
+	        <name>objet_bananes.png</name>
+	      </picture>
+	    </entry>
+	    <entry>
+	      <string>PSEditor-3787076070688169659.png</string>
+	      <picture id="PSEditor-3787076070688169659.png" url="resources/PSEditor-3787076070688169659.png" mimetype="image/png" size="10415"  locale="">
+	        <name>objet_pomme_de_terre.png</name>
+	      </picture>
+	    </entry>
+	  </resources>
+</sample>

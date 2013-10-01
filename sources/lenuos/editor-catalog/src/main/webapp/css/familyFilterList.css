@@ -1,0 +1,9 @@
+.pageList table th.cellId,
+.pageList table td.cellId {
+	width: 50px;
+	text-align: center;
+}
+.pageList table th.cellName,
+.pageList table td.cellName {
+	width: 400px;
+}

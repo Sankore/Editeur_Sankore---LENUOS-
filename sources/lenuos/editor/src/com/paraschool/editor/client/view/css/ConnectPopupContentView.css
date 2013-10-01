@@ -1,0 +1,146 @@
+@def width 504px;
+
+.dial_conn .loginfields input, .dial_conn .forgetPanel input {width:255px !important;}
+.dial_conn .loginfields .row .fieldLeft, .dial_conn .forgetPanel .row .fieldLeft {width:266px !important;}
+
+.window {
+	position: ABSOLUTE;
+	width: auto;
+	height: auto;
+	z-index: 999;
+	margin: 0px;
+	padding: 0px;
+}
+
+.dial_conn {
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.haut_dialConn,.bas_dialConn {
+	height: 6px;
+}
+
+@sprite .haut_dialConn {
+	gwt-image: 'hautDialConn';
+}
+
+@sprite .bas_dialConn {
+	gwt-image: 'basDialConn';
+}
+
+@sprite .mil_dialConn {
+	gwt-image: 'milDialConn';
+	background-position:bottom;
+	background-color: #FFFFFF;
+	width: 480px;
+	height: auto;
+	padding: 4px 10px;
+	border-right: 2px solid #333333;
+	border-left: 2px solid #333333;
+}
+
+.intitule_dialConn {
+	width: auto;
+	height: 69px;
+	padding: 0;
+	position: relative;
+	float: left;
+}
+
+.intitule_dialConn div {
+	float: left;
+}
+
+.mil_mil_dialConn {
+	padding: 10px 0 0 5px;
+	height: auto;
+	position: relative;
+}
+
+.logo {
+	margin-right: 10px;
+}
+
+.loginMessage {
+	font-size: 18px;
+	color: #333;
+	line-height: 20px;
+	margin:0;
+}
+
+.loginfields {
+	margin-top: 20px;
+}
+
+.forgetMessage {
+	font-size: 14px;
+	color: #333;
+}
+
+.close_dial {
+	margin: 0;
+	float: right;
+}
+
+
+.titre {
+	color: #00C6FF;
+	font-size: 40px;
+	line-height: 40px;
+	margin:5px 0 0;
+}
+
+.sous_titre {
+	color: #B5B5B5;
+	font-size: 14px;
+	margin:0;
+}
+
+@sprite .a_popClose2 {
+	gwt-image: 'btn_close';
+	float: right;
+	cursor: pointer;
+	color: #ffffff;
+	padding: 0;
+
+}
+
+@sprite .btn_dial {
+	gwt-image: 'btn_dial';
+	margin-top: 10px;
+	margin-right: 10px;
+	color: #fff;
+	font-size: 14px;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+.forget {
+	text-align: center;	
+}
+
+.forgetButton {
+	color: otherColor;
+	font-size: 14px;
+	text-decoration: underline;
+	border: none;
+	background: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+.forgetButton:hover {
+	color: #00C6FF;
+}
+
+.forgetPanel {
+	margin-top: 30px;
+	text-align: left;	
+}
+
+.unavailable {
+	opacity: 0.5;
+}

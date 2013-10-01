@@ -1,0 +1,25 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style type='com.paraschool.editor.modules.commons.client.ui.edit.OptionWidget.Style'>
+		.option {width:240px;margin:0px 15px 30px 15px; padding:0px;vertical-align:bottom; display:-moz-inline-stack; display:inline-block; zoom: 1; background-color:#ffffff;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius:5px;-moz-box-shadow: #DADADA -1px 0px 4px;-webkit-box-shadow: #DADADA -1px 0px 4px;box-shadow: #DADADA -1px 0px 4px;}
+		.thumbnail {width:240px; height:130px; margin:0px; padding:0px; border:none;}
+		.description {height:79px; line-height:16px; margin:0px;border-bottom:1px solid #dfdfde;}
+		.description div {color:#aaaaaa;height:65px;overflow:hidden;font-size:13px;margin:0px 20px 15px;}
+		 
+		.inputContainer {width:240px; height:29px; margin:0px; padding:0px; background-color:#f5f5f5; border-top:1px solid #ffffff; text-align: right;}
+		.inputContainer > span {display:block; height:30px;line-height: 30px;margin-right:10px;}
+		.inputContainer > span input {float:right; margin:0; height: 30px;}
+		.inputContainer > span label {float:right;margin-right:5px;}
+		
+	</ui:style>
+	
+	<g:HTMLPanel>
+		<g:Image ui:field="thumbnail" styleName="{style.thumbnail}"/>
+		<g:HTMLPanel styleName="{style.description}">
+			<g:Label ui:field="description"></g:Label>
+		</g:HTMLPanel>
+		<g:FlowPanel ui:field="inputContainer" styleName="{style.inputContainer}">
+		</g:FlowPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

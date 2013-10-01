@@ -1,0 +1,12 @@
+<project name="lenuos" default="editor">
+	<target name="api" description="Build module api">
+	    <ant dir="editor-api"/>
+	</target>
+	<target name="modules" depends="api" description="Build modules">
+	    <ant dir="editor-modules"/>
+	</target>
+	<target name="editor" depends="modules" description="Build the app">
+	    <ant dir="editor" target="archive"/>
+	    <ant dir="editor"/>
+	</target>
+</project>

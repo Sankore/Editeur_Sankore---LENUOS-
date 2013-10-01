@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+	<!-- Je ne peux pas utiliser la 2.5. Un bug de Jetty embarqué avec le plugin GWT. Voir http://robin.mytechtip.com/2009/07/23/jsp-expression-language-in-gwts-embedded-jetty/ -->
+
+	<mime-mapping>
+		<extension>wgt</extension>
+		<mime-type>application/widget</mime-type>
+	</mime-mapping>
+
+	<filter>
+		<filter-name>guiceFilter</filter-name>
+		<filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>guiceFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>com.paraschool.editor.server.config.EditorGuiceServletConfig</listener-class>
+	</listener>
+
+	<welcome-file-list>
+		<welcome-file>editor.html</welcome-file>
+	</welcome-file-list>
+
+</web-app>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <html 
+	xmlns:jsp="http://java.sun.com/JSP/Page" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core" 
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:template="urn:jsptagdir:/WEB-INF/tags/template" 
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" >  
+	
+	<jsp:directive.attribute name="code" required="true"/>
+	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=8" />	
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/${code}.css" />
+			
+		<title><spring:message code="app.title" /></title>
+	</head>
+	
+  	<body>
+  		<div id="header"><template:header /></div>
+  		<div id="container">
+  			<div id="menu"><template:menu /></div>
+	  		<div id="content" class="${code}">
+	  			<template:content>
+		  			<jsp:doBody />
+		  		</template:content>
+	  		</div>
+		</div>
+  		<div id="footer"><template:footer /></div>
+	</body>
+</html>

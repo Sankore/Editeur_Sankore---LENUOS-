@@ -1,0 +1,40 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<ui:with type="com.paraschool.editor.client.view.ResourceListView.Resources"
+		field="res"></ui:with>
+
+	<ui:style>
+		.media, .media *{max-width: 450px;text-align:center;}
+	</ui:style>
+
+	<g:FlowPanel styleName="{res.css.detail}">
+		<g:HTML styleName="{res.css.head}"></g:HTML>
+		<g:HTMLPanel styleName="{res.css.middle}">
+			<g:HTMLPanel styleName="{res.css.middleWrapper}">
+				<g:HTMLPanel styleName="{res.css.viewContainer} {res.appCss.flotL}">
+					<g:FlowPanel ui:field="media" styleName="{style.media}">
+					</g:FlowPanel>
+					<g:Button ui:field="chooseButton" styleName="{res.css.chooseButton}" title="Ajouter la ressource"><ui:attribute name="title" key="resources.choose.button.title"/>
+						<p><ui:msg key="resources.choose.button.label">Ajouter maintenant cette ressource à l’activité en cours</ui:msg></p>
+					</g:Button>
+				</g:HTMLPanel>
+				<g:HTMLPanel styleName="{res.css.textContainer} {res.appCss.flotL}">
+					<g:Anchor ui:field="name" styleName="{res.css.name}" title="Télécharger le fichier"><ui:attribute name="title" key="resources.download.title"/></g:Anchor>
+					<g:HTMLPanel styleName="{res.css.technical}">
+						<p ui:field="type" class="{res.css.type}"></p>
+						<g:HTMLPanel styleName="{res.css.more}">
+							<p><label class="{res.css.type}"><ui:msg key="resources.details.width.label">Largeur (px)</ui:msg></label><g:TextBox ui:field="width"></g:TextBox></p>
+							<p><label class="{res.css.type}"><ui:msg key="resources.details.height.label">Hauteur (px)</ui:msg></label><g:TextBox ui:field="height"></g:TextBox></p>
+						</g:HTMLPanel>
+					</g:HTMLPanel>
+					<p ui:field="description" class="{res.css.description}"></p>
+				</g:HTMLPanel>
+				<div class="{res.appCss.clear}"></div>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+		<g:HTML styleName="{res.css.bottom}"></g:HTML>
+	</g:FlowPanel>
+
+</ui:UiBinder>

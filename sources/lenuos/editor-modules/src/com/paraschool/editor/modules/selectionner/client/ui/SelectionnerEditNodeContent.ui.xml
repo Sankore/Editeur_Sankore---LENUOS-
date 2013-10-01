@@ -1,0 +1,91 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:c="urn:import:com.paraschool.editor.modules.commons.client.ui"
+	xmlns:e="urn:import:com.paraschool.editor.modules.commons.client.ui.edit">
+	
+	<ui:with type="com.paraschool.editor.modules.commons.client.ui.edit.Resources" field="res"/>
+	
+	<ui:style field="css" type="com.paraschool.editor.modules.selectionner.client.ui.SelectionnerEditNodeContent.CssResource">
+	
+		.text {font-size:2em;line-height:normal;}
+	
+		.statementButtonContainer{text-align: center;}
+	
+		.statementContainer {width:100%; padding:10px 0; margin: 0; text-align: center;}
+		.statementWrapper {margin: 0px; clear: both; overflow: hidden; opacity:0; height:0;
+			 transition-property: all; transition-duration: 500ms; transition-timing-function: ease-in-out; transition-delay: initial; 
+			 -webkit-transition-property: all; -webkit-transition-duration: 500ms; -webkit-transition-timing-function: ease-in-out; -webkit-transition-delay: initial; 
+			 -moz-transition-property: all; -moz-transition-duration: 500ms; -moz-transition-timing-function: ease-in-out; -moz-transition-delay: initial;
+			 -o-transition-property: all; -o-transition-duration: 500ms; -o-transition-timing-function: ease-in-out; -o-transition-delay: initial;
+		}
+		
+		.statementButtonContainer button:disabled, .statementContainer button:disabled {display:none;}
+		
+		.dontShowHideStatementButton{display:none;}
+		
+		.statementContainer > div {margin:20px 0;clear:both;}
+		.addSound {margin-right: 70px;}
+		.statement-sound {float: left; margin-right: 20px;}
+		.statement-text {text-align: left; padding:30px 5px 0;/*font-size:2em;line-height:normal;*/}
+		.blocsContainer{margin:0;}
+		.blocsWrapper {position: relative;margin:20px 0;}
+		.wrapper {width:100%;padding:0px;min-height: 40px;_height:40px;}
+		.addBlocContainer {width: 50px; border: 1px dashed #E6E3DC; border-radius: 5px; -webkit-border-radius: 5px;-moz-border-radius: 5px;-o-border-radius: 5px;}
+		
+		@if user.agent ie7 {
+			.blocsContainer {margin:0 50px 0 0;}
+			.addBlocContainer {position: absolute;top: 50%;right: 0;margin-top:-20px;}	
+		}
+		@if !user.agent ie7 {
+			.wrapper , .addBlocContainer {display:table-cell;min-width: 50px;text-align:center; vertical-align: middle;}	
+		}
+		
+		.addBlocContainer.disabled {visibility: hidden;width:0;min-width: 0;border: none;}
+		.addBlocContainer.disabled * {display:none;}
+		
+		.blocs {width:100%;text-align: center;border-spacing: 20px 0px;border-collapse: separate;table-layout: fixed;word-wrap: break-word;margin:0;padding:0;border: none;}
+		.blocs tr {border:hidden;}
+		.blocs td {padding: 10px 10px;overflow:hidden;border:hidden;}
+	   	.bloc-head {-moz-border-radius-topright:5px; -webkit-border-top-right-radius:5px; border-radius-top-right:5px;-moz-border-radius-topleft:5px; -webkit-border-top-left-radius:5px; border-radius-top-left:5px;}
+	   	.bloc-head {padding: 0px 5px !important;background-color: #fff;box-shadow: 0px 1px 3px #DDDDDD;-moz-box-shadow: 0px 1px 3px #DDDDDD;-webkit-box-shadow: 0px 1px 3px #DDDDDD;}
+	   	.bloc-core, .bloc-bottom {background-color: #fff;box-shadow: 0px 0px 3px #DDDDDD;-moz-box-shadow:#DDDDDD 0 2px 3px;-webkit-box-shadow: 0px 2px 3px #DDDDDD; }
+	   	.bloc-bottom {-moz-border-radius-bottomright:5px; -webkit-border-bottom-right-radius:5px; border-radius-bottom-right:5px;-moz-border-radius-bottomleft:5px; -webkit-border-bottom-left-radius:5px; border-radius-bottom-left:5px;}
+	   	
+	   	.blocs td button:disabled {display:none;}
+	</ui:style>
+
+	<g:HTMLPanel>
+		<div class="{css.statementButtonContainer}">
+			<g:Button ui:field="showStatementButton" styleName="{res.css.plus}" title="Ajouter des informations complémentaires pour cet exercice"><ui:attribute name="title" key="show.statement.title" /><ui:msg key="show.statement.button">Ajouter des informations complémentaires pour cet exercice</ui:msg></g:Button>
+			<g:Button visible="false" ui:field="hideStatementButton" styleName="{res.css.plusActive} {css.dontShowHideStatementButton}" title="Masquer les informations complémentaires"><ui:attribute name="title" key="hide.statement.title" /><ui:msg key="hide.statement.button">Masquer les informations complémentaires pour cet exercice</ui:msg></g:Button>
+		</div>
+
+		<g:HTMLPanel ui:field="statementWrapper" styleName="{css.statementWrapper}">
+			<g:HTMLPanel ui:field="statementContainer" styleName="{css.statementContainer}">
+				<c:MediaContainer ui:field="resource"></c:MediaContainer>
+				<g:Button ui:field="addResource"></g:Button>
+				<g:HTMLPanel>
+					<c:MediaContainer ui:field="sound" styleName="{css.statement-sound}"></c:MediaContainer>
+					<g:HTMLPanel styleName="{css.statement-text}">
+						<g:HTML ui:field="text" styleName="{css.text}"></g:HTML>
+					</g:HTMLPanel>
+				</g:HTMLPanel>
+				<g:HTMLPanel>
+					<g:Button ui:field="addSound"></g:Button>
+					<g:Button ui:field="addText"></g:Button>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+		<g:HTMLPanel styleName="{css.blocsWrapper}">
+			<g:HTMLPanel styleName="{css.wrapper}">
+				<g:HTMLPanel styleName="{css.blocsContainer}">
+					<e:Blocs ui:field="blocs" styleName="{css.blocs}" headStyleName="{css.bloc-head}" coreStyleName="{css.bloc-core}"  bottomStyleName="{css.bloc-bottom}" rowCount="4" maxBloc="-1"></e:Blocs>	
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+			<g:HTMLPanel ui:field="addBlocContainer" styleName="{css.addBlocContainer}">
+				<g:Button ui:field="addBloc" styleName="{res.css.hugePlus}" title="Ajouter un bloc"><ui:attribute name="title" key="add-bloc.title" /><ui:msg key="add-bloc.button">Ajouter un bloc</ui:msg></g:Button>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

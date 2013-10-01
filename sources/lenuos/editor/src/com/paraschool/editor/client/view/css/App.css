@@ -1,0 +1,62 @@
+.flotL{float:left;}
+.flotR{float:right;}
+.clear{clear:both;position:relative;}
+.gray{color:otherColor;}
+.darkGray{color:textColor;}
+.clickable{cursor:pointer;}
+.hide{display:none;}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+@sprite .button{gwt-image:'button';color:#FFF;text-shadow: black 0px 1px 1px;font-size:1.2em;line-height:1.2em;padding-top:40px;border:none;cursor: pointer;font-family:"Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;}
+@sprite .close{gwt-image:'close';cursor: pointer;padding:0;border:none;}
+
+@external media,link,document, fallback;
+@sprite .media.link {gwt-image:'linkIcon';background-position:top center;padding-top: 103px;width: 125px;word-wrap: break-word;display: inline-block;color: #888;font-size: 14px;text-decoration: none;}
+@sprite .media.document {gwt-image:'documentIcon';background-position:top center;padding-top: 103px;width: 125px;word-wrap: break-word;display: inline-block;color: #888;font-size: 14px;text-decoration: none;}
+.media.fallback {/*background: url("images/fallback-icon.png") no-repeat top center;padding-top: 140px;*/width: 120px; word-wrap: break-word; display: inline-block;color: #888;font-size: 14px;text-decoration: none;}
+
+
+
+.form input, .form label, .form textarea {height:1.4em;font-size:1.4em; margin-top:20px; margin-bottom:10px; line-height: normal;}
+.form textarea{height:92px;resize:none;}
+.form input, .form textarea {width:370px;margin-left:5px;margin-right:0; padding:0;border:none;background:none;overflow: auto;font-family:"Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; font-size:1.4em;color:textColor;}
+.form label{text-align:right;color:#e6e3dc;margin-left:0;margin-right:8px;}
+
+.row{height:62px;}
+.textRow{height:134px;}
+.row .labelContainer{width:191px;height:62px;float:left;}
+.textRow .labelContainer{width:191px;height:134px;float:left;}
+.row .field{height:62px;}
+.textRow .field{height:134px;}
+
+@sprite .row .labelLeft{gwt-image:'rLabelLeft';}
+@sprite .row .labelRight{gwt-image:'rLabelRight';width:185px;}
+@sprite .textRow .labelLeft{gwt-image:'tLabelLeft';}
+@sprite .textRow .labelRight{gwt-image:'tLabelRight';width:185px;}
+@sprite .row .fieldLeft{gwt-image:'rFieldLeft';width:380px;}
+@sprite .row .fieldRight{gwt-image:'rFieldRight';}
+@sprite .textRow .fieldLeft{gwt-image:'tFieldLeft';width:380px;}
+@sprite .textRow .fieldRight{gwt-image:'tFieldRight';}
+
+@external drag-positioner;
+.drag-positioner {height:40px;border: highlightColor 1px dashed;-moz-border-radius: 5px;-webkit-border-radius:5px;border-radius:5px;}

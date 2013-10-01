@@ -1,0 +1,7 @@
+@sprite .arrowChoixInteractivite{gwt-image:'arrowChoixInteractivite';position:absolute;width:904px;margin:-7px 0 0;background-position:right;}
+.edit{width:934px;}
+
+.enonce{width:884px;margin:10px auto;}
+@sprite .enonceHead{gwt-image:'enonceHead';background-position:top left;}
+@sprite .enonceMiddle{gwt-image:'enonceMiddle';background-position:top left;width:864px;padding:10px;}
+@sprite .enonceBottom{gwt-image:'enonceBottom';background-position:bottom left;}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample>
+	<details>
+		<id>select_3</id>
+		<module>select</module>
+		<name>Sélectionner plusieurs images</name>
+		<description></description>
+		<thumbnail>thumbnail.png</thumbnail>
+		<locale>fr</locale>		
+	</details>
+	<package>select_3_fr.zip</package>
+	<content>{&quot;statement&quot;:{&quot;statement&quot;:&quot;&lt;h3&gt;Sélectionnez uniquement les étapes de dessin dans cette liste.&lt;/h3&gt;&quot;, &quot;thumbnail&quot;:null, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;options&quot;:[{&quot;name&quot;:&quot;hide&quot;, &quot;value&quot;:&quot;hide&quot;},{&quot;name&quot;:&quot;switchStatement&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;sequence&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;switchNode&quot;, &quot;value&quot;:null}], &quot;nodes&quot;:[{&quot;content&quot;:{&quot;statement&quot;:{&quot;statement&quot;:&quot;&quot;, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;blocs&quot;:[{&quot;resource&quot;:&quot;PSEditor-6948295286765657582.png&quot;, &quot;text&quot;:&quot;&quot;},{&quot;resource&quot;:&quot;PSEditor-5836993812158228917.png&quot;, &quot;text&quot;:&quot;&quot;},{&quot;resource&quot;:&quot;PSEditor-1537150319668079845.png&quot;, &quot;text&quot;:&quot;&quot;}]}, &quot;options&quot;:[{&quot;name&quot;:&quot;input&quot;, &quot;value&quot;:&quot;checkbox&quot;},{&quot;name&quot;:&quot;resourceAlignement&quot;, &quot;value&quot;:&quot;BOTTOM&quot;}]}]}</content>
+  <resources>
+    <entry>
+      <string>PSEditor-5836993812158228917.png</string>
+      <picture id="PSEditor-5836993812158228917.png" url="resources/PSEditor-5836993812158228917.png" mimetype="image/png" size="24176" thumbnail="resources/thumbnails/vign_fatou_ecole_02_colorie.png" locale="">
+        <name>vign_fatou_ecole_02_colorie.png</name>
+      </picture>
+    </entry>
+    <entry>
+      <string>PSEditor-6948295286765657582.png</string>
+      <picture id="PSEditor-6948295286765657582.png" url="resources/PSEditor-6948295286765657582.png" mimetype="image/png" size="20620" thumbnail="resources/thumbnails/vign_fatou_ecole_01_dessine.png" locale="">
+        <name>vign_fatou_ecole_01_dessine.png</name>
+      </picture>
+    </entry>
+    <entry>
+      <string>PSEditor-1537150319668079845.png</string>
+      <picture id="PSEditor-1537150319668079845.png" url="resources/PSEditor-1537150319668079845.png" mimetype="image/png" size="25054" thumbnail="resources/thumbnails/vign_fatou_ecole_03_decoupe.png" locale="">
+        <name>vign_fatou_ecole_03_decoupe.png</name>
+      </picture>
+    </entry>
+  </resources>	
+</sample>

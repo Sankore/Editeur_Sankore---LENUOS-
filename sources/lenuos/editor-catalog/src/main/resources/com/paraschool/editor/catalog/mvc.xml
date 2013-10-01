@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/mvc
+           http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<context:component-scan base-package="${pom.groupId}.${pom.artifactId}.web" />
+	
+	<context:property-placeholder location="classpath:catalog.properties"/>
+	<context:property-override location="#{systemProperties.catalog.properties}" ignore-resource-not-found="true"/>
+	
+	<mvc:annotation-driven conversion-service="conversionService" />
+	<mvc:default-servlet-handler/>
+	
+	<bean id="contentNegotiating" class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="#{T(org.springframework.core.Ordered).HIGHEST_PRECEDENCE}" />
+		<property name="ignoreAcceptHeader" value="false" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="xml" value="application/xml" />
+				<entry key="html" value="text/html" />
+			</map>
+		</property>
+		<property name="viewResolvers">
+			<list>
+				<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+				<ref bean="urlViewResolver"/>
+			</list>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+					<property name="marshaller" ref="jaxbMarshaller" />
+					<property name="contentType" value="application/xml" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="urlViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+		<!--
+		<property name="exposedContextBeanNames">
+			<array>
+				<value>applicationProperties</value>
+				<value>sessionRegistry</value>
+			</array>
+		</property>
+		-->
+	</bean>
+				
+	<!-- I18N AND THEME -->
+	<!-- -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>${pom.groupId}.${pom.artifactId}.i18n.interface</value>
+			</list>
+		</property>
+		<!-- TODO Only in Release -->
+		<property name="useCodeAsDefaultMessage" value="${i18_useCodeAsDefaultMessage}" />
+	</bean>
+
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+		<property name="cookieName" value="${locale_cookie_name}" />
+		<!-- in seconds. If set to -1, the cookie is not persisted (deleted when 
+			browser shuts down ) -->
+		<property name="cookieMaxAge"
+			value="${locale_cookie_max_age}" />
+	</bean>
+
+	<mvc:interceptors>
+		<bean name="localeChangeInterceptor"
+			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName"
+				value="${locale_changeinterceptor_paramName}" />
+		</bean>
+	</mvc:interceptors>
+
+	<!-- FILE UPLOAD -->
+	<!-- -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<property name="maxUploadSize" value="${upload_file_size_limit}" />
+	</bean>
+
+	<!-- REST -->
+	<bean id="jaxbMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="classesToBeBound">
+			<list>
+				<value>com.paraschool.editor.catalog.models.FamilyFilter</value>
+				<value>com.paraschool.editor.catalog.models.Filter</value>
+				<value>com.paraschool.editor.catalog.web.models.ResourceModel</value>
+				<value>com.paraschool.editor.catalog.web.models.SearchModel</value>
+				<value>com.paraschool.editor.catalog.web.models.rest.RestError</value>
+				<value>com.paraschool.editor.catalog.web.models.rest.RestFamilyFilter</value>
+				<value>com.paraschool.editor.catalog.web.models.rest.RestFilter</value>
+				<value>com.paraschool.editor.catalog.web.models.rest.RestResource</value>
+				<value>com.paraschool.editor.catalog.web.models.rest.RestFile</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

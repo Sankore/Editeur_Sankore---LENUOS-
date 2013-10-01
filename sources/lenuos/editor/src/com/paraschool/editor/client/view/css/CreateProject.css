@@ -1,0 +1,24 @@
+@sprite .arrowRemplir{gwt-image:'arrowRemplir';width:172px;height:69px;margin-left:220px;}
+
+.returnButtonWrapper{width:auto;height:auto;position:relative;margin:115px 0 0 0;padding: 0px 15px;} 	
+@sprite .arrowRetour{gwt-image:'arrowRetour';padding:4px 0; background-position: right; width: auto; height: auto;}
+@sprite .returnButton{gwt-image:'returnButton';background-position:bottom;margin-top:82px;border:none;cursor: pointer;}
+
+.root{width:936px;margin:0px auto; padding-top: 78px;}
+.menu{float:left;margin: 8px 15px 0px 0px;}
+
+.container{width:312px;display:inline; float:left; margin:0;padding: 0;}
+.title {margin:0;height:30px;padding:15px 0;font-size: 2.6em;line-height: 100%; overflow: hidden; white-space: nowrap;}
+.subtitle {margin:0;color:otherColor;line-height: 1.6em;}
+@sprite .create{gwt-image:'create';background-position: center;font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;}
+.create .content {width:245px; height: 145px;margin: 83px auto 0;}
+
+.root .form{width:582px;height:auto; float:left;}
+
+.submit{margin-top: 30px;cursor: pointer;}
+
+.modelsPart {}
+.selected {}
+
+.objectif, .description{ display: none;}
+.message {}

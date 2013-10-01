@@ -1,0 +1,13 @@
+package com.paraschool.editor.modules.ordonner.client.i18n;
+
+import com.paraschool.editor.modules.commons.client.i18n.ModuleWithNodesMessage;
+
+/*
+ * Created at 15 août 2010
+ * By bathily
+ */
+public interface OrdonnerModuleMessages extends ModuleWithNodesMessage {
+	String separator();
+	String optionRandomCell();
+	String advice();
+}

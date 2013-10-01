@@ -1,0 +1,80 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:t="urn:import:com.paraschool.editor.interactivity.client">
+	
+	<ui:style>
+		.info{}
+		.info .wrapper{float:left;width:100%;}
+		.info .content{margin-left:200px;}
+		.info .left{float:left;width:200px;margin-left:-100%;}
+		
+		.name{font-size:16px; font-weight: bold;}
+		.author{font-size: 12px;}
+		.description{font-size:14px;padding:10px;}
+		
+		.input, .result{clear:left;}
+		.input textarea {width: 100%; height: 150px;}
+		
+		.module {margin:10px 0;background-color: black;}
+		.edit, .page {}
+		.page {margin: 0 auto;}
+		.page > div {margin-top:90px;height: 648px;overflow-y:auto;}
+		.edit > div, .page > div {padding:10px;}
+	</ui:style>
+	<g:HTMLPanel>
+		
+		<g:FlowPanel styleName="{style.info}">
+			<g:FlowPanel styleName="{style.wrapper}">
+				<g:FlowPanel styleName="{style.content}">
+					<g:HTML ui:field="name" styleName="{style.name}"></g:HTML>
+					<g:HTML ui:field="author" styleName="{style.author}"></g:HTML>
+					<g:HTML ui:field="description" styleName="{style.description}"></g:HTML>
+					
+				</g:FlowPanel>
+			</g:FlowPanel>
+			<g:FlowPanel styleName="{style.left}">
+				<g:Image ui:field="thumbnail"></g:Image>
+			</g:FlowPanel>
+		</g:FlowPanel>
+		
+		<g:HTMLPanel styleName="{style.input}">
+			<g:TextArea ui:field="area"></g:TextArea>
+			<g:HTMLPanel>
+				<g:ListBox ui:field="modeBox">
+					<g:item>FULL</g:item>
+					<g:item>LIGHT</g:item>
+					<g:item>ONLY_MEDIA</g:item>
+					<g:item>NONE</g:item>
+				</g:ListBox>
+				<g:Button ui:field="load">Load</g:Button>
+				<g:Button ui:field="clear">Clear</g:Button>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+		
+		<g:HTMLPanel styleName="{style.module}">
+			<g:HTMLPanel styleName="{style.edit}">
+				<g:FlowPanel ui:field="edit"></g:FlowPanel>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+		
+		<g:HTMLPanel styleName="{style.result}">
+			<g:Button ui:field="execute">Execute</g:Button>
+			<g:HTML ui:field="data"></g:HTML>
+		</g:HTMLPanel>
+		
+		<g:HTMLPanel styleName="{style.module}">
+			<g:HTMLPanel styleName="{style.page}">
+				<g:HTMLPanel>
+					<t:PagePanel ui:field="page"/>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+		
+		<g:HTMLPanel styleName="{style.result}">
+			<g:Button ui:field="executeView">Execute</g:Button>
+			<g:HTML ui:field="dataView"></g:HTML>
+		</g:HTMLPanel>
+		
+	</g:HTMLPanel>
+</ui:UiBinder> 

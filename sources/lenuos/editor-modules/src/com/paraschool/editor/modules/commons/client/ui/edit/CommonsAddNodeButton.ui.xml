@@ -1,0 +1,18 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:app="urn:import:com.paraschool.htmllist.client"
+	xmlns:c="urn:import:com.paraschool.editor.modules.commons.client.ui">
+
+	<ui:style>
+		.node-button {font-size:20px;color: #e6e3dc;margin:0;padding:0;border:0;padding:0;outline:none;background:none;cursor:pointer;}
+		.node-button span {vertical-align:middle;padding:0;margin:0;}
+		.next-id {font-size:40px;margin-right:10px !important;}
+		.node-button:disabled {display:none;}
+	</ui:style>
+	
+	<g:Button styleName="{style.node-button}">
+		<span ui:field="nextIdSpan" class="{style.next-id}"></span>
+		<span ui:field="titleSpan"></span>
+	</g:Button>
+
+</ui:UiBinder> 

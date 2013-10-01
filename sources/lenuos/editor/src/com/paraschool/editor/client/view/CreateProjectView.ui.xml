@@ -1,0 +1,191 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:h="urn:import:com.paraschool.htmllist.client">
+
+	<ui:with type="com.paraschool.editor.client.view.CreateProjectView.Resources" field="res"></ui:with>
+	
+	<g:HTMLPanel>
+		<div class="{res.css.root}">
+			<div class="{res.css.menu}">
+			
+				<g:HTMLPanel styleName="{res.css.container}">
+		            <g:HTMLPanel styleName="{res.css.create}">
+		            	<div class="{res.css.content}">
+		            		<p class="{res.css.title}"><ui:msg key="new.project.box.title">Nouveau projet</ui:msg></p>
+		                	<p class="{res.css.subtitle}"><ui:msg key="new.project.box.description">Veuillez remplir les informations nécessaires à la création du projet. Attention, il est nécessaire de renseigner	tous les champs du formulaire.</ui:msg></p>
+		            	</div>
+		            </g:HTMLPanel>
+		        </g:HTMLPanel>
+		        
+				<div class="{res.appCss.clear}"></div>
+				<div class="{res.css.returnButtonWrapper}">
+					<div class="{res.css.arrowRetour}">
+						<g:Button ui:field="backButton" styleName="{res.css.returnButton}"></g:Button>
+					</div>
+				</div>
+				<div class="{res.appCss.clear}"></div>
+			</div>
+			<div class="{res.css.form}">
+				<g:HTMLPanel>
+					<g:HTMLPanel styleName="{res.appCss.form}">
+						<div class="{res.css.arrowRemplir}"></div>
+						<!-- \\ LIGNE 1 : NOM // -->
+						<div class="{res.appCss.row}">
+							<div class="{res.appCss.labelContainer}">
+								<div class="{res.appCss.labelLeft} {res.appCss.flotL}"></div>
+								<div class="{res.appCss.labelRight} {res.appCss.flotL}">
+									<label class="{res.appCss.flotR}"><ui:msg key="project.form.name.label">Nom du projet</ui:msg></label>
+								</div>
+								<div class="{res.appCss.clear}"></div>
+							</div>
+							<div class="{res.appCss.field} {res.appCss.flotL}">
+								<div class="{res.appCss.fieldLeft} {res.appCss.flotL}">
+									<g:TextBox name="nom_projet" ui:field="nameBox"></g:TextBox>
+								</div>
+								<div class="{res.appCss.fieldRight} {res.appCss.flotR}"></div>
+								<div class="{res.appCss.clear}"></div>
+							</div>
+							<div class="{res.appCss.clear}"></div>
+						</div>
+		
+						<!-- \\ LIGNE 2 : OBJECTIF // -->
+						<div class="{res.appCss.row} {res.css.objectif}">
+							<div class="{res.appCss.labelContainer}">
+								<div class="{res.appCss.labelLeft} {res.appCss.flotL}"></div>
+								<div class="{res.appCss.labelRight} {res.appCss.flotL}">
+									<label class="{res.appCss.flotR}"><ui:msg key="project.form.objectif.label">Objectif pédagogique</ui:msg></label>
+								</div>
+								<div class="{res.appCss.clear}"></div>
+							</div>
+							<div class="{res.appCss.field} {res.appCss.flotL}">
+								<div class="{res.appCss.fieldLeft} {res.appCss.flotL}">
+									<g:TextBox name="obj_projet" ui:field="objectifBox"></g:TextBox>
+								</div>
+								<div class="{res.appCss.fieldRight} {res.appCss.flotR}"></div>
+								<div class="{res.appCss.clear}"></div>
+							</div>
+							<div class="{res.appCss.clear}"></div>
+						</div>
+		
+						<!-- \\ LIGNE 3 : DESCRIPTION // -->
+						<div class="{res.appCss.textRow} {res.css.description}">
+							<div class="{res.appCss.labelContainer}">
+								<div class="{res.appCss.labelLeft} {res.appCss.flotL}"></div>
+								<div class="{res.appCss.labelRight} {res.appCss.flotL}">
+									<label class="{res.appCss.flotR}"><ui:msg key="project.form.description.label">Description du projet</ui:msg></label>
+								</div>
+								<div class="{res.appCss.clear}"></div>
+							</div>
+							<div class="{res.appCss.field} {res.appCss.flotL}">
+								<div class="{res.appCss.fieldLeft} {res.appCss.flotL}">
+									<g:TextArea name="desc_projet" ui:field="descriptionBox"></g:TextArea>
+								</div>
+								<div class="{res.appCss.fieldRight} {res.appCss.flotR}"></div>
+								<div class="{res.appCss.clear}"></div>
+							</div>
+							<div class="{res.appCss.clear}"></div>
+						</div>
+						
+						<g:TextBox name="project_version" ui:field="versionBox" visible="false"/>
+
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="{res.appCss.form}" visible="false">
+						<div class="{res.appCss.row}">
+							<div class="{res.appCss.labelContainer}">
+								<div class="{res.appCss.labelLeft} {res.appCss.flotL}"></div>
+								<div class="{res.appCss.labelRight} {res.appCss.flotL}">
+									<label class="{res.appCss.flotR}"><ui:msg key="project.form.author.name.label">Nom de l'auteur</ui:msg></label>
+								</div>
+								<div class="{res.appCss.clear}"></div>
+							</div>
+							<div class="{res.appCss.field} {res.appCss.flotL}">
+								<div class="{res.appCss.fieldLeft} {res.appCss.flotL}">
+									<g:TextBox name="author_name" ui:field="authorNameBox"></g:TextBox>
+								</div>
+								<div class="{res.appCss.fieldRight} {res.appCss.flotR}"></div>
+								<div class="{res.appCss.clear}"></div>
+							</div>
+							<div class="{res.appCss.clear}"></div>
+						</div>
+	
+						<div class="{res.appCss.row}">
+							<div class="{res.appCss.labelContainer}">
+								<div class="{res.appCss.labelLeft} {res.appCss.flotL}"></div>
+								<div class="{res.appCss.labelRight} {res.appCss.flotL}">
+									<label class="{res.appCss.flotR}"><ui:msg key="project.form.author.email.label">Email de l'auteur</ui:msg></label>
+								</div>
+								<div class="{res.appCss.clear}"></div>
+							</div>
+							<div class="{res.appCss.field} {res.appCss.flotL}">
+								<div class="{res.appCss.fieldLeft} {res.appCss.flotL}">
+									<g:TextBox name="author_email" ui:field="authorEmailBox"></g:TextBox>
+								</div>
+								<div class="{res.appCss.fieldRight} {res.appCss.flotR}"></div>
+								<div class="{res.appCss.clear}"></div>
+							</div>
+							<div class="{res.appCss.clear}"></div>
+						</div>
+	
+						<div class="{res.appCss.row}">
+							<div class="{res.appCss.labelContainer}">
+								<div class="{res.appCss.labelLeft} {res.appCss.flotL}"></div>
+								<div class="{res.appCss.labelRight} {res.appCss.flotL}">
+									<label class="{res.appCss.flotR}"><ui:msg key="project.form.author.company.label">Société / Organisation</ui:msg></label>
+								</div>
+								<div class="{res.appCss.clear}"></div>
+							</div>
+							<div class="{res.appCss.field} {res.appCss.flotL}">
+								<div class="{res.appCss.fieldLeft} {res.appCss.flotL}">
+									<g:TextBox name="author_company" ui:field="authorCompanyBox"></g:TextBox>
+								</div>
+								<div class="{res.appCss.fieldRight} {res.appCss.flotR}"></div>
+								<div class="{res.appCss.clear}"></div>
+							</div>
+							<div class="{res.appCss.clear}"></div>
+						</div>
+						
+						<div class="{res.appCss.row}">
+							<div class="{res.appCss.labelContainer}">
+								<div class="{res.appCss.labelLeft} {res.appCss.flotL}"></div>
+								<div class="{res.appCss.labelRight} {res.appCss.flotL}">
+									<label class="{res.appCss.flotR}"><ui:msg key="project.form.author.company.url.label">Url</ui:msg></label>
+								</div>
+								<div class="{res.appCss.clear}"></div>
+							</div>
+							<div class="{res.appCss.field} {res.appCss.flotL}">
+								<div class="{res.appCss.fieldLeft} {res.appCss.flotL}">
+									<g:TextBox name="author_url" ui:field="authorUrlBox"></g:TextBox>
+								</div>
+								<div class="{res.appCss.fieldRight} {res.appCss.flotR}"></div>
+								<div class="{res.appCss.clear}"></div>
+							</div>
+							<div class="{res.appCss.clear}"></div>
+						</div>
+					</g:HTMLPanel>
+					<g:HTMLPanel styleName="{res.css.modelsPart}" visible="false">
+						<g:Button ui:field="modelsSwitcher" title="Afficher la liste des models"> Vous pouvez utiliser des modèles. </g:Button>
+						<g:HTMLPanel ui:field="modelsWrapper" visible="false">
+							<g:HTMLPanel ui:field="formWrapper">
+								<g:Label>Pour créer un modèle choisissez sur votre ordinateur le fichier d'export d'un projet créé sur l'application.</g:Label>
+								<g:FormPanel ui:field="form" action="mupload" method="post" encoding="multipart/form-data">
+									<g:FileUpload ui:field="file" name="file"/>
+								</g:FormPanel>
+							</g:HTMLPanel>
+							<g:HTMLPanel ui:field="modelListWrapper" >
+								<g:Label>Sélectionnez le modèle que vous voulez utiliser.</g:Label>
+								<h:HTMLList ui:field="models"></h:HTMLList>
+								<g:Button ui:field="delete" title="Supprimer le modèle selectionné" visible="false">Supprimer le modèle selectionné</g:Button>
+							</g:HTMLPanel>
+						</g:HTMLPanel>
+					</g:HTMLPanel>
+					<g:HTML ui:field="message" styleName="{res.css.message}"></g:HTML>
+					<div class="{res.css.submit} {res.appCss.flotR}">
+						<g:Button styleName="{res.appCss.button}" ui:field="submitButton"><ui:msg key="button.validate">Valider</ui:msg></g:Button>
+					</div>
+					<div class="{res.appCss.clear}"></div>
+				</g:HTMLPanel>
+			</div>
+			<div class="{res.appCss.clear}"></div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

@@ -1,0 +1,67 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	ui:generateLocales="default"
+	ui:generateFormat="com.google.gwt.i18n.rebind.format.PropertiesFormat"
+	xmlns:h="urn:import:com.paraschool.htmllist.client">
+	
+	<ui:image field="paginationItem" src="images/pagination-item.png"></ui:image>
+	<ui:image field="paginationItemActive" src="images/pagination-item-active.png"></ui:image>
+	<ui:image field="previousButton" src="images/page-previous.png"></ui:image>
+	<ui:image field="nextButton" src="images/page-next.png"></ui:image>
+	
+	<ui:style field="css" type="com.paraschool.viewer.client.view.ViewerView.CssResource">
+		@external root,nopage,pagination-list,current,actions-container,navigation-container,navigation-previous,navigation-next,pages-container,pages,page,active;
+		
+		html {font-size: 18px;}
+		body{font-size:0.65em;margin:0; padding:0;background-color: #F7F7F7;}
+		
+		.root {position:relative;background-color: #F7F7F7;padding:0px;}
+		
+		.pagination-list{display: block;list-style: none;margin:0 auto;padding: 0px;text-align: center;width: auto;z-index: 10000;}
+		@sprite .pagination-list li {gwt-image:'paginationItem';display: inline-block;cursor:pointer;margin:0 5px;padding: 0px;/*width: 11px;height: 12px;*/}
+		.pagination-list li span {display: none;margin: 0; padding: 0;}
+		@sprite .pagination-list li.current {gwt-image:'paginationItemActive';}
+		
+		.actions-container {display:none;}
+		
+		.navigation-container {display:block;height:0;margin:0;padding:0;}
+		
+		.navigation-container button.navigation-previous {margin-left: -65px;}
+		.navigation-container button.navigation-next {margin-left: -15px;left:100%;}
+		
+		@sprite .navigation-container button.navigation-previous:hover {gwt-image:'previousButton';background-position: 45px center;margin-left: -40px;background-color:#000;background-color: literal("rgba(0,0,0,0.6)") !important;}
+		@sprite .navigation-container button.navigation-next:hover {gwt-image:'nextButton';background-position: 10px center;margin-left: -40px;background-color:#000;background-color: literal("rgba(0,0,0,0.6)") !important;}
+		
+		.navigation-container button {border:0;padding:0;outline:0;outline:none;cursor:pointer;display:block;text-indent:-9999px;
+			position:fixed;top:50%;margin-top:-40px;z-index:1000;
+			width:80px !important; height:80px !important; background-color:#000 !important; background-color:#000;background-color: literal("rgba(0,0,0,0.4)") !important; 
+			border-radius:40px;-webkit-border-radius:40px;-moz-border-radius:40px; 
+			transition: margin 0.3s ease-out, background-color 0.5s ease;-webkit-transition: margin 0.3s ease-out, background-color 0.5s ease;-moz-transition: margin 0.3s ease-out, background-color 0.5s ease;
+		}
+		
+		.pages-container {margin: 0 22px;}
+		.nopage .navigation-container, .nopage .pagination-list {display:none;}
+		.pages {position:relative;}
+		.page {}
+		.active {}
+	</ui:style>
+	
+	<g:FlowPanel ui:field="root" styleName="root nopage">
+		<g:HTMLPanel ui:field="paginationContainer" styleName="pagination-container">
+			<h:HTMLList ui:field="pagination" styleName="pagination-list"></h:HTMLList>
+		</g:HTMLPanel>
+		<g:HTMLPanel ui:field="actionsContainer" styleName="actions-container">
+			<g:Button ui:field="save">Save</g:Button>
+			<g:Button ui:field="finish">Finish</g:Button>
+		</g:HTMLPanel>
+		<g:HTMLPanel ui:field="navigationContainer"  styleName="navigation-container">
+			<g:Button ui:field="previous"  styleName="navigation-previous" title="Afficher la page précédente"><ui:attribute name="title" key="previous.page.button.title"/><ui:msg key="previous.page.button">Précédente</ui:msg></g:Button>
+			<g:Button ui:field="next"  styleName="navigation-next" title="Afficher la page suivante"><ui:attribute name="title" key="next.page.button.title"/><ui:msg key="next.page.button">Suivante</ui:msg></g:Button>
+		</g:HTMLPanel>
+		<g:HTMLPanel ui:field="pagesContainer" styleName="pages-container">
+			<g:FlowPanel ui:field="pages" styleName="pages"></g:FlowPanel>
+		</g:HTMLPanel>
+	</g:FlowPanel>
+	
+</ui:UiBinder> 

@@ -1,0 +1,17 @@
+.huge-plus, .plus, .plus-active, .delete, .tiny-delete, .add-resource, .add-sound, .add-text, .add-resource-tiny, .add-text-tiny{border:0;padding:0;margin:0;outline:0px;outline:none;background:none;cursor:pointer;color:#e6e3dc;font-size:14px;}
+
+@sprite .huge-plus {gwt-image:'hugePlusButton';background-position: 0% 50%;width:auto;padding-left:value('hugePlusButton.getWidth','px');line-height:value('hugePlusButton.getHeight','px');height:value('hugePlusButton.getHeight','px');}
+@sprite .plus {gwt-image:'plusButton';background-position: 0% 50%;width:auto;padding-left:value('plusButton.getWidth','px');line-height:value('plusButton.getHeight','px');height:value('plusButton.getHeight','px');}
+@sprite .plus-active {gwt-image:'plusActiveButton';background-position: 0% 50%;width:auto;padding-left:value('plusActiveButton.getWidth','px');line-height:value('plusActiveButton.getHeight','px');height:value('plusActiveButton.getHeight','px');}
+@sprite .delete {gwt-image:'deleteButton';background-position: 0% 50%;width:auto;padding-left:value('deleteButton.getWidth','px');line-height:value('deleteButton.getHeight','px');height:value('deleteButton.getHeight','px');}
+@sprite .tiny-delete {gwt-image:'tinyDeleteButton';background-position: 0% 50%;width:auto;padding-left:value('tinyDeleteButton.getWidth','px');line-height:value('tinyDeleteButton.getHeight','px');height:value('tinyDeleteButton.getHeight','px');}
+
+@sprite .puce-number {gwt-image:'puce';background-position: 0% 50%;color:#00c6ff;font-size:14px;padding-left:value('puce.getWidth','px');width:30px;}
+
+@sprite .add-resource {gwt-image:'resourceButton';background-position: top center;width:auto;height:auto;padding-top:value('resourceButton.getHeight','px');min-width:value('resourceButton.getWidth','px');}
+@sprite .add-sound {gwt-image:'soundButton';background-position: top center;width:auto;height:auto;padding-top:value('soundButton.getHeight','px');min-width:value('soundButton.getWidth','px');}
+@sprite .add-text {gwt-image:'textButton';background-position: top center;width:auto;height:auto;padding-top:value('textButton.getHeight','px');min-width:value('textButton.getWidth','px');}
+
+@sprite .add-resource-tiny {gwt-image:'resourceTinyButton';}
+@sprite .add-text-tiny {gwt-image:'textTinyButton';}
+.add-resource-tiny, .add-text-tiny {text-indent: -999px;} 

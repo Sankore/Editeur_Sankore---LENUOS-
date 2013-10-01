@@ -1,0 +1,56 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:app="urn:import:com.paraschool.editor.client.view"
+	xmlns:h="urn:import:com.paraschool.htmllist.client">
+
+	<ui:with type="com.paraschool.editor.client.view.ProjectView.Resources"
+		field="res"></ui:with>
+
+	<g:HTMLPanel styleName="{res.css.container}">
+		<g:HTMLPanel ui:field="head" styleName="{res.css.nav}">
+			<div class="{res.css.navLeft} {res.appCss.flotL}"></div>
+			
+			<g:FlowPanel styleName="{res.css.navContent} {res.appCss.flotL}">
+				<g:HTMLPanel styleName="{res.css.projectNameWrapper}">
+					<g:HTMLPanel styleName="{res.css.projectName}">
+						<g:InlineLabel ui:field="projectNameLabel">
+							<ui:msg key="project.name.label">Nom du projet</ui:msg>
+						</g:InlineLabel>
+						<g:InlineLabel ui:field="hideForm" visible="false">
+							<ui:msg key="hide.form.label">Fermer</ui:msg>
+						</g:InlineLabel>
+					</g:HTMLPanel>
+				</g:HTMLPanel>
+				
+				<g:HTMLPanel styleName="{res.css.addResourceButtonWrapper}">
+					<g:Button styleName="{res.css.addResourceButton}" ui:field="addResourceButton" title="Explorer les ressources du projet">
+						<ui:attribute name="title" key="resources.button.title"/>
+						<span>
+							<ui:msg key="resources.button.label">Explorer mes ressources</ui:msg>
+						</span>
+					</g:Button>
+				</g:HTMLPanel>
+				
+			</g:FlowPanel>
+			<div class="{res.css.navRight} {res.appCss.flotR}"></div>
+		</g:HTMLPanel>
+		<g:FlowPanel ui:field="formContainer" styleName="{res.css.form}"></g:FlowPanel>
+		<g:HTML ui:field="arrow" styleName="{res.css.arrowAjouterPage}"></g:HTML>
+		
+		<g:FlowPanel styleName="{res.css.display}">
+			<g:HTMLPanel ui:field="nav"  styleName="{res.css.displayNav}">
+				<app:PageNavigation ui:field="pagesButtons" styleName="{res.css.buttons}"/>
+			</g:HTMLPanel>
+			<g:HTMLPanel styleName="{res.css.emptyPage}">
+				<g:HTML styleName="{res.css.emptyPageHead}"></g:HTML>          
+				<g:HTML styleName="{res.css.emptyPageContent}"></g:HTML>          
+				<g:HTML styleName="{res.css.emptyPageBottom}"></g:HTML>          
+			</g:HTMLPanel>
+			<g:FlowPanel ui:field="pages" styleName="{res.css.pages}"/>
+		</g:FlowPanel>
+		
+		<g:FlowPanel ui:field="windowContainer"></g:FlowPanel>
+		
+	</g:HTMLPanel>
+</ui:UiBinder> 

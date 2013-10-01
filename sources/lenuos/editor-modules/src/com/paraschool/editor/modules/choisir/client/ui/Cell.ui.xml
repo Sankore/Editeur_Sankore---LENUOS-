@@ -1,0 +1,36 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	
+	<ui:with type="com.paraschool.editor.modules.commons.client.ui.edit.Resources" field="res"/>
+	
+	<ui:style>
+		.container {}
+		.mainContainer {}
+		.wrapper {float:left;width: 100%; margin-bottom: 15px;}
+
+		.middle {margin-right:37px;}
+		.number{margin-left:5px;background: none;padding: 0;font-size:18px;}
+		.content {padding-left:75px;font-size:0.75em;color:#666;}
+		
+		.button {margin-left:15px;}
+		.left {float:left;}
+		
+	</ui:style>
+	
+	<g:HTMLPanel styleName="{style.container}">
+		<g:HTMLPanel styleName="{style.mainContainer}">
+			<g:HTMLPanel styleName="{style.wrapper}">
+				<g:HTMLPanel styleName="{style.middle}">
+					<g:HTMLPanel styleName="{style.left}">
+						<g:Button ui:field="remove" styleName="{res.css.tinyDelete} {style.button}" title="Supprimer"><ui:attribute name="title" key="remove.title"/></g:Button>
+						<g:InlineLabel ui:field="number"  styleName="{res.css.puceNumber} {style.number}"></g:InlineLabel>
+					</g:HTMLPanel>
+					<g:HTML ui:field="content"  styleName="{style.content}"></g:HTML>
+				</g:HTMLPanel>
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+
+	</g:HTMLPanel>
+	
+</ui:UiBinder> 

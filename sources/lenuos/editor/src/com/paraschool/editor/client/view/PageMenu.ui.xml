@@ -1,0 +1,25 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:app="urn:import:com.paraschool.editor.client.view"
+	xmlns:h="urn:import:com.paraschool.htmllist.client">
+	
+	<ui:with type="com.paraschool.editor.client.view.PageMenu.Resources" field="res"></ui:with>
+		
+	<g:HTMLPanel styleName="{res.css.container}">
+		<div class="{res.css.head}"></div>
+		<g:FlowPanel ui:field="menuContainer" styleName="{res.css.content}">
+			<h:HTMLList ui:field="menuList" styleName="{res.css.buttons}">
+				<app:MenuItem ui:field="addInteractivityButton" imageUrl="{res.interactivity.getURL}" title="Supprimer la page"><ui:attribute name="title" key="page.menu.module.title"/></app:MenuItem>
+				<app:MenuItem ui:field="exportButton" imageUrl="{res.export.getURL}" title="Exporter la page"><ui:attribute name="title" key="page.menu.export.title"/></app:MenuItem>
+				<app:MenuItem ui:field="deleteButton" imageUrl="{res.close.getURL}" title="Supprimer la page"><ui:attribute name="title" key="page.menu.close.title"/></app:MenuItem>
+				<app:MenuItem ui:field="quickEditButton" visible="false" imageUrl="{res.edit.getURL}" title="Edition rapide"><ui:attribute name="title" key="page.menu.edit.title"/></app:MenuItem>
+				<app:MenuItem ui:field="preferenceButton" visible="false" imageUrl="{res.preferences.getURL}" title="Editer les préférences de la page"><ui:attribute name="title" key="page.menu.preference.title"/></app:MenuItem>
+				<app:MenuItem ui:field="toolsButton" visible="false" imageUrl="{res.tools.getURL}" styleName="{res.css.last}" title="Réglages"><ui:attribute name="title" key="page.menu.tools.title"/></app:MenuItem>
+			</h:HTMLList>
+		</g:FlowPanel>
+		<div class="{res.css.bottom}"></div>
+		<div class="{res.appCss.clear}"></div>
+	</g:HTMLPanel>
+	
+</ui:UiBinder> 

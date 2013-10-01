@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	 <head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="gwt:property" content="locale=fr"/>
+		<title>Editor</title>
+		
+		<link rel="shortcut icon" href="./images/icon.png" />
+		<link rel="apple-touch-icon" href="./images/icon.png" />
+		
+		<script type="text/javascript" src="./aloha/aloha.js"></script>
+		<script type="text/javascript" src="./aloha/plugins/com.gentics.aloha.plugins.Format/plugin.js"></script>
+		<script type="text/javascript" src="./aloha/plugins/com.gentics.aloha.plugins.Table/plugin.js"></script>
+		<script type="text/javascript" src="./aloha/plugins/com.gentics.aloha.plugins.List/plugin.js"></script>
+		<script type="text/javascript" src="./aloha/plugins/com.gentics.aloha.plugins.Paste/plugin.js"></script>
+		<script type="text/javascript" src="./aloha/plugins/com.gentics.aloha.plugins.Paste/wordpastehandler.js"></script>		
+		<script type="text/javascript" src="editor/editor.nocache.js"></script>
+
+		<script type="javascript">
+			GENTICS.Aloha.settings = {
+				logLevels: {'error': false, 'warn': false, 'info': false, 'debug': false},
+				errorhandling : false,
+				ribbon: false,	
+				/*"i18n": {"current": "fr"},*/
+				"plugins": { 
+					"com.gentics.aloha.plugins.List": { 
+						"enabled": false 
+					},
+					"com.gentics.aloha.plugins.Table": { 
+						"enabled": false 
+					},
+				 	"com.gentics.aloha.plugins.Format": { 
+						config : [ 'b', 'i','u','del','sub','sup', 'p', 'title', 'h1', 'h2', 'h3'/*, 'h4', 'h5', 'h6', 'pre'*/, 'removeFormat']
+					} 
+			 	}
+			};
+		
+			window.applicationLoaded = function() {
+				var locale = window.Locale;		
+			}
+		</script>
+		<style type="text/css">
+			.GENTICS_editable {
+				outline: none !important;
+			}
+			.GENTICS_editable_highlight, .GENTICS_editable_active, .GENTICS_editable_active[contenteditable=true]:focus {
+				outline: 1px dashed #E6E3DC !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<img id="loading" src="images/ajax-loader.gif" style="width:32px; height:32px; display:block; position:absolute; top: 50%; left:50%; margin:0 16px 16px 0;"/>
+		<iframe src="javascript:''" id="__gwt_historyFrame" style="position:absolute;width:0;height:0;border:0"></iframe>
+	</body>
+	
+</html>

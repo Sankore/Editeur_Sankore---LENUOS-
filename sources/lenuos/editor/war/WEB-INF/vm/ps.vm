@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ps:manifest xmlns:ps="http://www.paraschool.com/xsd" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.paraschool.com/xsd psmanifest.xsd">
+
+	#foreach($p in $projects)
+	<ps:name #if($p.details.locale) locale="$p.details.locale" #end>
+		$p.details.name
+	</ps:name>
+	<ps:objectif #if($p.details.locale) locale="$p.details.locale" #end>
+		$p.details.objectif
+	</ps:objectif>
+	<ps:description #if($p.details.locale) locale="$p.details.locale" #end>
+		$p.details.description
+	</ps:description>
+	#end	
+	
+	<ps:support type="WEB_CLICK">
+	#foreach($locale in $entries.keySet())
+		<ps:entry #if($locale != "") locale="$locale" #end entry="$entries.get($locale)"/>
+	#end
+	</ps:support>
+</ps:manifest>

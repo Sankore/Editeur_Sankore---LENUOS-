@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Application Status</title>
+</head>
+
+<body>
+	<div>
+		<h2>Application</h2>
+		<p><span>Version : </span><span>$version</span></p>
+		<p><span>Build : </span><span>$build</span></p>
+		<p><span>Build date : </span><span>$buildDate</span></p>		
+	</div>
+	#if( $security )
+	<div>
+		<h2>Connected users</h2>
+		<table>
+			<tr>
+				<th></th>
+				<th></th>
+				<th>Principal</th>
+				<thAuthenticated / Remembered></th>
+				<th>Host</th>
+				<th>Start</th>
+				<th>Last access</th>
+			</tr>
+			#foreach($subject in $subjects)
+				#set($session = $subject.session)
+				<tr>
+					<td><a href="runas?id=$session.id">Run As</a></td>
+					<td><a href="disconnect?id=$session.id">Disconnect</a></td>
+					<td>$subject.principal</td>
+					<td>#if($subject.authenticated) <span>Authenticated</span> #elseif($subject.remembered) <span>Remembered</span> #else <span>???</span> #end </td>
+					<td>$session.host</td>
+					<td>$session.startTimestamp</td>
+					<td>$session.lastAccessTime</td>
+				</tr>
+			#end
+		</table>
+	</div>
+	#else
+	<p>Security is not enable</p>
+	#end
+</body>
+</html>

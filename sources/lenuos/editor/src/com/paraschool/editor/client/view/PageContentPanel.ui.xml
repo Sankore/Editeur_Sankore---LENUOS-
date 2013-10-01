@@ -1,0 +1,18 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:v="urn:import:com.paraschool.editor.client.view">
+	
+	<ui:style>
+		.wrapper{margin:0px 10px;}
+	</ui:style>
+
+	<g:FlowPanel>
+		<g:FlowPanel>
+            <g:HTML ui:field="enonce"></g:HTML>
+        </g:FlowPanel>
+        <g:AbsolutePanel ui:field="wrapper">
+			<v:InteractivityPanel ui:field="panel" styleName="{style.wrapper}"></v:InteractivityPanel>
+		</g:AbsolutePanel>
+	</g:FlowPanel>
+	
+</ui:UiBinder> 

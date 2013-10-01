@@ -1,0 +1,26 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:h="urn:import:com.paraschool.htmllist.client" xmlns:c="urn:import:com.paraschool.editor.modules.commons.client.ui">
+	<ui:style field="css" type="com.paraschool.editor.modules.choisir.client.ui.ChoisirNodeContent.CssResource">
+		@external part, statement, cells-col, resource-col, cells, switched, resource;
+		.part{}
+		.statement{}
+		.cells-col{}
+		.cells{}
+		.resource-col{}
+		.resource{}
+		.switched{}
+	</ui:style>
+	<g:FlowPanel ui:field="root" styleName="{css.part}">
+		<g:Grid>
+			<g:row>
+			    <g:customCell styleName="{css.cells-col}">
+			      <g:FlowPanel ui:field="cells" styleName="{css.cells}"/>
+			    </g:customCell>
+			    <g:customCell styleName="{css.resource-col}">
+					<c:MediaContainer ui:field="resource" styleName="{css.resource}"/>
+			    </g:customCell>
+			  </g:row>
+		</g:Grid>
+	</g:FlowPanel>
+</ui:UiBinder> 

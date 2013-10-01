@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample>
+	<details>
+		<id>associate_2</id>
+		<module>associate</module>
+		<name>Associer une image à un son</name>
+		<description></description>
+		<thumbnail>thumbnail.png</thumbnail>
+		<locale>fr</locale>
+	</details>
+	<package>associate_2_fr.zip</package>
+	<content>{&quot;statement&quot;:{&quot;statement&quot;:&quot;&lt;span class=\&quot;Apple-style-span\&quot; style=\&quot;font-family: &apos;Lucida Grande&apos;, &apos;Lucida Sans Unicode&apos;; \&quot;&gt;&lt;h3 style=\&quot;font-family: &apos;Lucida Grande&apos;, &apos;Lucida Sans Unicode&apos;; font-size: 2em; font-weight: normal; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; \&quot;&gt;Placez les images qui correspondent au son.&lt;/h3&gt;&lt;/span&gt;&quot;, &quot;thumbnail&quot;:null, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;options&quot;:[{&quot;name&quot;:&quot;hide&quot;, &quot;value&quot;:&quot;hide&quot;},{&quot;name&quot;:&quot;switchStatement&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;sequence&quot;, &quot;value&quot;:null}], &quot;nodes&quot;:[{&quot;content&quot;:{&quot;statement&quot;:{&quot;statement&quot;:&quot;&quot;, &quot;sound&quot;:null, &quot;resource&quot;:null}, &quot;blocs&quot;:[{&quot;sound&quot;:&quot;PSEditor-8706770732483468067.mp3&quot;, &quot;text&quot;:&quot;&quot;}], &quot;cells&quot;:[{&quot;resource&quot;:&quot;PSEditor-5824920793015801473.png&quot;, &quot;text&quot;:&quot;&quot;},{&quot;resource&quot;:&quot;PSEditor-8588694305015461134.png&quot;, &quot;text&quot;:&quot;&quot;},{&quot;resource&quot;:&quot;PSEditor-2550550131977009450.png&quot;, &quot;text&quot;:&quot;&quot;},{&quot;resource&quot;:&quot;PSEditor-2663470041673334343.png&quot;, &quot;text&quot;:&quot;&quot;}]}, &quot;options&quot;:[{&quot;name&quot;:&quot;random&quot;, &quot;value&quot;:&quot;random&quot;},{&quot;name&quot;:&quot;cellSequence&quot;, &quot;value&quot;:null},{&quot;name&quot;:&quot;resourceAlignement&quot;, &quot;value&quot;:&quot;BOTTOM&quot;}]}]}</content>
+  <resources>
+    <entry>
+      <string>PSEditor-5824920793015801473.png</string>
+      <picture id="PSEditor-5824920793015801473.png" url="resources/PSEditor-5824920793015801473.png" mimetype="image/png" size="21597" locale="">
+        <name>vign_fatou_ecole_05_colle_mur.png</name>
+      </picture>
+    </entry>
+    <entry>
+      <string>PSEditor-8588694305015461134.png</string>
+      <picture id="PSEditor-8588694305015461134.png" url="resources/PSEditor-8588694305015461134.png" mimetype="image/png" size="25054" locale="">
+        <name>vign_fatou_ecole_03_decoupe.png</name>
+      </picture>
+    </entry>
+    <entry>
+      <string>PSEditor-2550550131977009450.png</string>
+      <picture id="PSEditor-2550550131977009450.png" url="resources/PSEditor-2550550131977009450.png" mimetype="image/png" size="20620" locale="">
+        <name>vign_fatou_ecole_01_dessine.png</name>
+      </picture>
+    </entry>
+    <entry>
+      <string>PSEditor-8706770732483468067.mp3</string>
+      <audio id="PSEditor-8706770732483468067.mp3" url="resources/PSEditor-8706770732483468067.mp3" mimetype="audio/mpeg" size="42239" locale="">
+        <name>girafe_dessiner.mp3</name>
+        <info duration="-9223372036854" codec="CODEC_ID_MP3" format="FMT_S16"/>
+      </audio>
+    </entry>
+    <entry>
+      <string>PSEditor-2663470041673334343.png</string>
+      <picture id="PSEditor-2663470041673334343.png" url="resources/PSEditor-2663470041673334343.png" mimetype="image/png" size="24176" locale="">
+        <name>vign_fatou_ecole_02_colorie.png</name>
+      </picture>
+    </entry>
+  </resources>	
+</sample>

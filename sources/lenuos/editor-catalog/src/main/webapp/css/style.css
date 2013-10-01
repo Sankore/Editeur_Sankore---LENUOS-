@@ -1,0 +1,214 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #E6E3DC;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial,
+		Helvetica, sans-serif;
+	color: #999999;
+}
+
+form {
+	margin: 0px;
+}
+
+div#container {
+	width: 940px;
+}
+
+div#menu {
+	float: left;
+	padding: 10px;
+	width: 200px;
+}
+
+div#menu ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+div#menu li {
+	list-style-type: none;
+	background-image: url(../images/bglimenu.png);
+	width: 175px;
+	height: 23px;
+	padding: 7px 5px 5px 20px;
+	cursor: pointer;
+}
+
+div#menu li.selected {
+	background-image: url(../images/bglimenuselected.png);
+	font-weight: bold;
+}
+
+div#header {
+	height: 56px;
+	clear: both;
+	background-image: url(../images/bgheader.jpg);
+	background-repeat: repeat-x;
+	padding: 8px 20px 8px 20px;;
+}
+
+div#header a.disconnect img {
+	border: 0px;
+	margin-top: 6px;
+}
+
+div#content {
+	float: left;
+	width: 720px;
+	height: auto;
+}
+
+div#footer {
+	clear: both;
+}
+
+div.pageList {
+	padding: 10px;
+}
+
+div.buttonBar {
+	width:100%;
+}
+
+div.buttonBar {
+	width: 100%;
+	margin: 5px 0px;
+}
+
+div.buttonBar .left {
+	margin-right: 10px;
+}
+
+div.buttonBar .right {
+	margin-left: 10px;
+}
+
+.error {
+	color: red;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+	position: relative;
+}
+
+.button {
+	width: 74px;
+	border: none;
+	color: white;
+	margin: 5px;
+	cursor: pointer;
+	background-color: transparent;
+}
+.button {
+	background-image: url(../images/btn_dial.png);
+	height: 28px;
+}
+.button.valider {
+	background-image: url(../images/btn_valider.png);
+	height: 66px;
+	padding-top: 40px;
+}
+.button.retour {
+	margin-top: 43px;
+}
+.button.delete {
+	background-image: url(../images/poub.png);
+	width: 25px;
+}
+.button.create {
+	background-image: url(../images/new.png);
+	width: 30px;
+}
+.button.edit {
+	background-image: url(../images/edit.png);
+	width: 30px;
+}
+.button.search {
+	background-image: url(../images/puce_menu2H_ressource.png);
+	width: 30px;
+}
+.pageDetail {
+	width:500px;
+}
+.pageDetail table tr .labelLeft {
+	background-image: url(../images/bg_gch_lab.png);
+	background-repeat: no-repeat;
+	width: 6px;
+	height: 62px;
+}
+.pageDetail table tr .labelRight {
+	background-image: url(../images/bg_dt_lab.png);
+	background-repeat: repeat-x;
+	width: 185px;
+	text-align: right;
+	padding-right: 8px;
+	color: #E6E3DC;
+}
+.pageDetail table tr .fieldLeft {
+	background-image: url(../images/bg_gch_inp.png);
+	background-repeat: repeat-x;
+	width: 380px;
+	padding-left: 8px;
+	color: #333333;
+}
+.pageDetail table tr .fieldLeft.read {
+	background-image: url(../images/bg_gch_inp_read.png);
+}
+.pageDetail table tr .fieldRight {
+	background-image: url(../images/bg_dt_inp.png);
+	width: 9px;
+}
+.pageDetail table tr .fieldLeft label.url {
+	font-size: 11px;
+}
+.pageDetail table tr .fieldRight.read {
+	background-image: url(../images/bg_dt_inp_read.png);
+}
+.pageDetail table tr .fieldLeft select,
+.pageDetail table tr .fieldLeft input[type=file],
+.pageDetail table tr .fieldLeft input[type=text] {
+	border: none;
+	border-color: transparent;
+	background-color: transparent;
+	font-size: 1em;
+	color: #333333;
+	width: 100%;
+}
+.pageList table th,
+.pageList table td {
+	padding: 5px;
+	height: 30px;
+	border: 1px solid #CBCBCB;
+}
+.pageList table th {
+	background-color: #585858;
+}
+.pageList table td {
+/*	background-image: url(../images/bg_td.png);
+	background-repeat: repeat-x;
+	background-position: bottom;
+*/	background-color: white;
+}
+.pageList table th.cellLeft,
+.pageList table td.cellLeft {
+		border-right: none;
+}
+.pageList table th.cellMiddle,
+.pageList table td.cellMiddle {
+	border-left: none;
+	border-right: none;
+}
+.pageList table th.cellRight,
+.pageList table td.cellRight {
+	border-left: none;
+}

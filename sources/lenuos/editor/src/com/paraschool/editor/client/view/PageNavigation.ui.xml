@@ -1,0 +1,15 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:app="urn:import:com.paraschool.editor.client.view"
+	xmlns:h="urn:import:com.paraschool.htmllist.client">
+
+	<ui:with type="com.paraschool.editor.client.view.ProjectView.Resources"
+		field="res"></ui:with>
+
+	<h:HTMLList>
+		<h:HTMLListItem ui:field="slider" styleName="{res.css.slide} {res.css.nopage}"></h:HTMLListItem>
+		<app:PagesButton ui:field="addPageButton" title="Ajouter une page"><ui:attribute name="title" key="addpage.button.title"/> </app:PagesButton>
+	</h:HTMLList>
+
+</ui:UiBinder> 
